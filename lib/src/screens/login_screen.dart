@@ -22,18 +22,20 @@ class LoginScreen extends StatelessWidget {
         child: Container(
           width: size.width * 0.8,
           height: size.height * 0.7,
-          color: Colors.black54,
-          
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(25.0), 
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _logo(),
-              SizedBox(height: 70.0,),
+              SizedBox(height: 40.0,),
               _campoUsuario(),
               SizedBox(height: 20.0,),
               _campoPassword(),
-              SizedBox(height: 70.0,),
-              _botonLogin()
+              SizedBox(height: 40.0,),
+              _botonLogin(context)
             ],
           ),
         ),
@@ -42,9 +44,12 @@ class LoginScreen extends StatelessWidget {
   }
 
   Widget _logo() {
-    return FadeInImage(
-      placeholder: AssetImage('assets/jar-loading.gif'), 
-      image: AssetImage('assets/logo.png')
+    return Container(
+      padding: EdgeInsets.all(30),
+      child: FadeInImage(
+        placeholder: AssetImage('assets/jar-loading.gif'), 
+        image: AssetImage('assets/logoHD.png')
+      ),
     );
   }
 
@@ -86,11 +91,13 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _botonLogin() {
+  Widget _botonLogin(context) {
     return Container(
       padding: EdgeInsets.symmetric( horizontal: 100.0 ),
       child: ElevatedButton(
-        onPressed: () {}, 
+        onPressed: () {
+          Navigator.pushNamed(context, 'home');
+        }, 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

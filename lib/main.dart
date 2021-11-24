@@ -11,10 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Godares',
-      routes: getRoutes(),
-      // onGenerateRoute: ( settings ) {
-      //   return MaterialPageRoute(builder: (BuildContext context) => AlertPage() );
-      // },
+      routes: getRoutes()
     );
   }
 }

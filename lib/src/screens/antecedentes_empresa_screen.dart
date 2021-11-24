@@ -4,16 +4,11 @@ import 'package:flutter/material.dart';
 class AntecedentesEmpresaScreen extends StatelessWidget {
   const AntecedentesEmpresaScreen({Key? key}) : super(key: key);
 
-<<<<<<< HEAD
  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Antecedentes de la Empresas'),),
-=======
-@override
-  Widget build(BuildContext context) {
-    return Scaffold(
->>>>>>> 420b72a1c38e33b8b0966724141541ecf77981ea
+      appBar: AppBar(title: Text('Antecedentes de la Empresas'),
+      ),
       body: Center(
       child: SingleChildScrollView( child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -346,8 +341,4 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
     )
     );
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 420b72a1c38e33b8b0966724141541ecf77981ea

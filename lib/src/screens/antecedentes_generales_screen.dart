@@ -1,4 +1,3 @@
-import 'package:banca_finanzas/src/widgets/subtitulo.dart';
 import 'package:banca_finanzas/src/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +8,7 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff565D82),
         title: Text('Antecedentes Generales'),
       ),
       body: SingleChildScrollView( 
@@ -20,7 +20,14 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
           _antecedentesEmpresario(),
 
         ])
-      )
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff565D82),
+        onPressed: (){},
+        child: Icon(Icons.add),
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 

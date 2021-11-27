@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:banca_finanzas/src/widgets/widgets.dart';
 
 
 class AntecedentesEmpresaScreen extends StatelessWidget {
@@ -7,338 +8,213 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Antecedentes de la Empresas'),
+      appBar: AppBar(
+        backgroundColor: Color(0xff565D82),
+        title: Text('Antecedentes de la Empresa'),
       ),
-      body: Center(
-      child: SingleChildScrollView( child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        new Text(
-          "Datos Generales",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+      body: SingleChildScrollView( 
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
 
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Nombres y Apellidos',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Direccion',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Telefono',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Enter a search term',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Enter a search term',
-            ),
-          ),
-        ),
-        new Text(
-          "Antiguedad de la empresa",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Años',
-            ),
-          ),
-        ),
-        new Text(
-          "Estatus Legal",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Persona Fisica',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Persona Moral',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'No Registrada',
-            ),
-          ),
-        ),
-        new Text(
-          "Estatus fiscal",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Años',
-            ),
-          ),
-        ),
-        new Text(
-          "Tamaño de la empresa",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        new Text(
-          "Numero de empleados",
-          style: new TextStyle(fontSize:30.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Operativos',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Administrativos',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Otros',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Total',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Comentarios',
-            ),
-          ),
-        ),
-        new Text(
-          "Ventas",
-          style: new TextStyle(fontSize:30.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Diarias',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Semanales',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Mensuales',
-            ),
-          ),
-        ),
-        new Text(
-          "Valor de los activos",
-          style: new TextStyle(fontSize:30.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Terreno',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Bienes',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Otros',
-            ),
-          ),
-        ),
-        new Text(
-          "Cobertura de mercado",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Local',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Regional',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Internacional',
-            ),
-          ),
-        ),
-        new Text(
-          "Vision de la empresa",
-          style: new TextStyle(fontSize:25.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Corto Plazo ',
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Largo Plazo',
-            ),
-          ),
-        ),
-        new Text(
-          "Comentario ejecutivo de antecedentes",
-          style: new TextStyle(fontSize:20.0,
-              color: const Color(0xFF000000),
-              fontWeight: FontWeight.w200,
-              fontFamily: "Roboto"),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration:  InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Comentarios',
-            ),
-          ),
-        ),
+          _datosGenerales(),
+          _antiguedadEmpresa(),
+          _estatusLegal(),
+          _estatusFiscal(),
+          _tamanioEmpresa(),
+          _coberturaMercado(),
+          _visionEmpresa(),
+          _comentarioAntecedentes()
 
-      ],
-    )
-    )
-    )
+        ])
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff565D82),
+        onPressed: (){},
+        child: Icon(Icons.add),
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
+    );  
+  }
+
+  Widget _datosGenerales() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Datos Generales'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Nombre'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Dirección'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Teléfono y fax o email'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'R.F.C'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Domicilio Fiscal'),
+        ],
+      ),
     );
   }
+
+  Widget _antiguedadEmpresa() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Antigüedad de la empresa'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Años')
+        ],
+      ),
+    );
+  }
+
+  Widget _estatusLegal() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Estatus legal'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Persona física'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Persona moral'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'No registrada'),
+        ],
+      ),
+    );
+  }
+
+  Widget _estatusFiscal() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Estatus fical'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: '')
+        ],
+      ),
+    );
+  }
+
+  Widget _tamanioEmpresa() {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric( horizontal: 15.0 ),
+            child: Titulo(
+              titulo: 'Tamaño de la empresa'
+            )
+          ),
+          SizedBox( height: 10 ),
+          Subtitulo(subtitulo: 'NÚMERO DE EMPLEADOS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Operativos'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Administrativos'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Otros'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Total'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Comentarios'),
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'VENTAS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Diarias'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Semanales'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Mensuales')
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'VALOR DE LOS ACTIVOS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Terreno'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Bienes'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Otros')
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _coberturaMercado() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Cobertura del mercado'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Local'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Regional'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Internacional'),
+        ],
+      ),
+    );
+  }
+
+  Widget _visionEmpresa() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Visión de la empresa'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Corto plazo'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Largo plazo'),
+        ],
+      ),
+    );
+  }
+
+  Widget _comentarioAntecedentes() {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Comentario ejecutivo de antecedentes'),
+          SizedBox( height: 10.0 ),
+          TextFieldWidget(label: 'Comentarios'),
+          SizedBox( height: 50.0 ),
+        ],
+      ),
+    );
+  }
+
+
+
+
+  
+
+  
 }
+  
+
+
+

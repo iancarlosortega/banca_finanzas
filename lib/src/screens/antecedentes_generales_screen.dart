@@ -18,6 +18,7 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
 
           _datosGenerales(),
           _antecedentesEmpresario(),
+          _antecedentesPareja(),
 
         ])
       ),
@@ -84,14 +85,130 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
                 TextFieldWidget(label: 'Comentarios del empresario...'),
               ],
             ),
-          )
+          ),
+          Subtitulo(subtitulo: 'LOS PADRES'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Origen de los padres'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Lugar'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Edad'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Estado civil'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Ocupación'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Escolaridad'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Estado de salud'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Comentarios de los padres...'),
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'NÚMERO DE HERMANOS NACIDOS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Nombres'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Edades'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Ocupaciones'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Lugar dentro de sus hermanos')
+              ],
+            ),
+          ),
         ],
       ),
     );
 
   }
 
-  
+  Widget _antecedentesPareja() {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric( horizontal: 15.0 ),
+            child: Titulo(
+              titulo: 'Antecedentes de la pareja'
+            )
+          ),
+          SizedBox( height: 10 ),
+          Subtitulo(subtitulo: 'LA PAREJA'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Nombre de la pareja'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Origen'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Lugar'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Edad'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Ocupación'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Escolaridad'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Estado de salud'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Comentarios de la pareja...'),
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'LOS SUEGROS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Nombres'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Origen'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Lugar'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Edad'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Viven'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Ocupación'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Escolaridad'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Estado de salud'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Comentarios de los suegros...'),
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'NÚMERO DE CUÑADOS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFieldWidget(label: 'Nombres'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Edades'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Ocupaciones'),
+                SizedBox( height: 10 ),
+                TextFieldWidget(label: 'Lugar dentro de sus hermanos'),
+                SizedBox( height: 50 ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
 
 

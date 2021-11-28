@@ -7,6 +7,9 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
 
  @override
   Widget build(BuildContext context) {
+
+    bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff565D82),
@@ -29,80 +32,193 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
         ])
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xff565D82),
-        onPressed: (){},
-        child: Icon(Icons.add),
+      floatingActionButton: Visibility(
+        visible: !keyboardIsOpen,
+        child: FloatingActionButton(
+          backgroundColor: Color(0xff565D82),
+          onPressed: (){},
+          child: Icon(Icons.add),
+        ),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
     );  
   }
+}
+  
+class _datosGenerales extends StatelessWidget {
 
-  Widget _datosGenerales() {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
           Titulo(titulo: 'Datos Generales'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Nombre'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Nombre',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Dirección'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Dirección',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Teléfono y fax o email'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Teléfono y fax o mail',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'R.F.C'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'R.F.C',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Domicilio Fiscal'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Dominio Fiscal',
+            ),
+          )
         ],
       ),
     );
   }
+}
 
-  Widget _antiguedadEmpresa() {
+class _antiguedadEmpresa extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
           Titulo(titulo: 'Antigüedad de la empresa'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Años')
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Años',
+            ),
+          )
         ],
       ),
     );
   }
+}
 
-  Widget _estatusLegal() {
+class _estatusLegal extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
           Titulo(titulo: 'Estatus legal'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Persona física'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Persona física',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Persona moral'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Persona moral',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'No registrada'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'No registrada',
+            ),
+          )
         ],
       ),
     );
   }
+}
 
-  Widget _estatusFiscal() {
+class _estatusFiscal extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
-          Titulo(titulo: 'Estatus fical'),
+          Titulo(titulo: 'Estatus fiscal'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: '')
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: '',
+            ),
+          )
         ],
       ),
     );
   }
+}
 
-  Widget _tamanioEmpresa() {
+class _tamanioEmpresa extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
@@ -118,15 +234,61 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Operativos'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Operativos',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Administrativos'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Administrativos',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Otros'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Otros',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Total'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Total',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Comentarios'),
+                TextFormField(
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Comentarios',
+                  ),
+                )
               ],
             ),
           ),
@@ -135,11 +297,38 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Diarias'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Diarias',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Semanales'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Semanales',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Mensuales')
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Mensuales',
+                  ),
+                )
               ],
             ),
           ),
@@ -148,11 +337,38 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Terreno'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Terreno',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Bienes'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Regional',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Otros')
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Internacional',
+                  ),
+                )
               ],
             ),
           ),
@@ -160,61 +376,117 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _coberturaMercado() {
+class _coberturaMercado extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
           Titulo(titulo: 'Cobertura del mercado'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Local'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Local',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Regional'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Regional',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Internacional'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Internacional',
+            ),
+          )
         ],
       ),
     );
   }
+}
 
-  Widget _visionEmpresa() {
+class _visionEmpresa extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
           Titulo(titulo: 'Visión de la empresa'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Corto plazo'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Corto plazo',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Largo plazo'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Largo plazo',
+            ),
+          )
         ],
       ),
     );
   }
+}
 
-  Widget _comentarioAntecedentes() {
+class _comentarioAntecedentes extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
-          Titulo(titulo: 'Comentario ejecutivo de antecedentes'),
+          Titulo(titulo: 'Comentario ejecutivo'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Comentarios'),
+          TextFormField(
+            maxLines: null,
+            keyboardType: TextInputType.multiline,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Comentarios',
+            ),
+          ),
           SizedBox( height: 50.0 ),
         ],
       ),
     );
   }
-
-
-
-
-  
-
-  
 }
-  
-
-
-

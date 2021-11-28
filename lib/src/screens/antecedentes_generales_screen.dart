@@ -6,6 +6,9 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff565D82),
@@ -19,40 +22,81 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
           _datosGenerales(),
           _antecedentesEmpresario(),
           _antecedentesPareja(),
+          _matrimonio(),
+          _filosofiaCaracter(),
+          _metasPersonales(),
+          _administracionTiempo(),
+          _comentarioEjecutivo()
 
         ])
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xff565D82),
-        onPressed: (){},
-        child: Icon(Icons.add),
+      floatingActionButton: Visibility(
+        visible: !keyboardIsOpen,
+        child: FloatingActionButton(
+          backgroundColor: Color(0xff565D82),
+          onPressed: (){},
+          child: Icon(Icons.add),
+        ),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 
-  Widget _datosGenerales() {
+}
 
+class _datosGenerales extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: [
           Titulo(titulo: 'Datos Generales del empresario'),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Nombres y Apellidos'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Nombres y Apellidos',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Dirección'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Dirección',
+            ),
+          ),
           SizedBox( height: 10.0 ),
-          TextFieldWidget(label: 'Teléfono'),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Teléfono',
+            ),
+          )
         ],
       ),
     );
-
   }
+}
 
-  Widget _antecedentesEmpresario() {
+class _antecedentesEmpresario extends StatelessWidget {
 
+  @override
+  Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
@@ -68,21 +112,94 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Ciudad de origen'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ciudad de origen',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Lugar'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Lugar',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Edad'),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Estado civil'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado civil',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Ocupación'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupación',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Escolaridad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Escolaridad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Estado de salud'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado de salud',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Comentarios del empresario...'),
+                TextFormField(
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Comentarios del empresario...',
+                  ),
+                )
               ],
             ),
           ),
@@ -91,21 +208,105 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Origen de los padres'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Nombres de los padres',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Lugar'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ciudad de origen',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Edad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Viven',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Estado civil'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Lugar',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Ocupación'),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Escolaridad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupación',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Estado de salud'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Escolaridad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Comentarios de los padres...'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado de salud',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Comentarios de los padres...',
+                  ),
+                )
               ],
             ),
           ),
@@ -114,23 +315,61 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Nombres'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Nombres',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Edades'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edades',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Ocupaciones'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupaciones',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Lugar dentro de sus hermanos')
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Lugar dentro de sus hermanos',
+                  ),
+                ),
               ],
             ),
           ),
         ],
       ),
     );
-
   }
+}
+class _antecedentesPareja extends StatelessWidget {
 
-  Widget _antecedentesPareja() {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
@@ -146,21 +385,105 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Nombre de la pareja'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Nombre',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Origen'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ciudad de origen',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Lugar'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Vive',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Edad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Lugar',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Ocupación'),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Escolaridad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupación',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Estado de salud'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Escolaridad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Comentarios de la pareja...'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado de salud',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Comentario...',
+                  ),
+                )
               ],
             ),
           ),
@@ -169,23 +492,105 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Nombres'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Nombres',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Origen'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Originarios',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Lugar'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Viven',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Edad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Lugar',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Viven'),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Ocupación'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupación',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Escolaridad'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Escolaridad',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Estado de salud'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado de salud',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Comentarios de los suegros...'),
+                TextFormField(
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Comentarios de los suegros...',
+                  ),
+                )
               ],
             ),
           ),
@@ -194,14 +599,49 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
             padding: EdgeInsets.all(15),
             child: Column(
               children: [
-                TextFieldWidget(label: 'Nombres'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Nombres',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Edades'),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edades',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Ocupaciones'),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupaciones',
+                  ),
+                ),
                 SizedBox( height: 10 ),
-                TextFieldWidget(label: 'Lugar dentro de sus hermanos'),
-                SizedBox( height: 50 ),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Lugar dentro de sus hermanos',
+                  ),
+                ),
               ],
             ),
           ),
@@ -209,8 +649,330 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
       ),
     );
   }
+}
 
+class _matrimonio extends StatelessWidget {
 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric( horizontal: 15.0 ),
+            child: Titulo(
+              titulo: 'El Matrimonio'
+            )
+          ),
+          SizedBox( height: 10 ),
+          Subtitulo(subtitulo: 'AÑOS DE CASADOS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: '',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'SITUACIÓN AFECTIVA'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: '',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Subtitulo(subtitulo: 'HIJOS'),
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Número de hijos',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Edades',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Ocupaciones',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado civil',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Escolaridad',
+                  ),
+                ),
+                SizedBox( height: 10 ),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: Color(0xffA4A4A4),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                  decoration: InputDecorations.loginInputDecoration(
+                    hintText: 'Estado de salud',
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
+class _filosofiaCaracter extends StatelessWidget {
 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Filosofía y/o Carácter'),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Hobbies, color, personas',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            maxLines: null,
+            keyboardType: TextInputType.multiline,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Comentarios',
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _metasPersonales extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Metas Personales'),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Profesionales',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Afectivas',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Físicas',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            maxLines: null,
+            keyboardType: TextInputType.multiline,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Comentarios',
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _administracionTiempo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Administración del tiempo'),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Día',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Semana',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Mes',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Año',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            maxLines: null,
+            keyboardType: TextInputType.multiline,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Comentarios',
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _comentarioEjecutivo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Comentario ejecutivo'),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            maxLines: null,
+            keyboardType: TextInputType.multiline,
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+              color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: '',
+            ),
+          ),
+          SizedBox( height: 50.0 ),
+        ],
+      ),
+    );
+  }
 }

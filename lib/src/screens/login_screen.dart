@@ -1,4 +1,7 @@
+import 'package:banca_finanzas/src/providers/login_form_provider.dart';
+import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,84 +22,69 @@ class LoginScreen extends StatelessWidget {
             fit: BoxFit.cover 
           )
         ),
-        child: Container(
-          width: size.width * 0.8,
-          height: size.height * 0.7,
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.6),
-            borderRadius: BorderRadius.circular(25.0), 
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _logo(),
-              SizedBox(height: 40.0,),
-              _campoUsuario(),
-              SizedBox(height: 20.0,),
-              _campoPassword(),
-              SizedBox(height: 40.0,),
-              _botonLogin(context)
-            ],
+        child: SingleChildScrollView(
+          child: Container(
+            width: size.width * 0.8,
+            height: size.height * 0.7,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.6),
+              borderRadius: BorderRadius.circular(25.0), 
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _logo(),
+                SizedBox(height: 10.0,),
+                ChangeNotifierProvider(
+                  create: ( _ ) => LoginFormProvider(),
+                  child: _LoginForm()
+                )
+              ],
+            ),
           ),
         ),
       ) ,
     );
   }
+}
+class _LoginForm extends StatelessWidget {
+  const _LoginForm({Key? key}) : super(key: key);
 
-  Widget _logo() {
-    return Container(
-      padding: EdgeInsets.all(30),
-      child: FadeInImage(
-        placeholder: AssetImage('assets/jar-loading.gif'), 
-        image: AssetImage('assets/logoHD.png')
-      ),
+  @override
+  Widget build(BuildContext context) {
+
+    final loginForm = Provider.of<LoginFormProvider>(context);
+
+    return Form(
+      key: loginForm.formKey,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      child: Column(
+        children: [
+          _campoEmail( context ),
+          SizedBox( height: 20.0 ),
+          _campoPassword( context ),
+          SizedBox( height: 40.0 ),
+          _botonLogin( context )
+        ],
+      )
     );
   }
 
-  Widget _campoUsuario(){
-    return Container(
-      padding: EdgeInsets.symmetric( horizontal: 20.0 ),
-      child: TextField(
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.all( 10.0 ),
-          fillColor: Colors.white,
-          filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(color: Colors.white, width: 2.0)
-          ),
-          labelText: 'Usuario',
-          suffixIcon: Icon( Icons.person )
-        ),
-      ),
-    );
-  }
+  Widget _botonLogin( context ) {
 
-  Widget _campoPassword(){
-    return Container(
-      padding: EdgeInsets.symmetric( horizontal: 20.0 ),
-      child: TextField(
-        obscureText: true,
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          filled: true,
-          contentPadding: EdgeInsets.all( 10.0 ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0)
-          ),
-          labelText: 'Contraseña',
-          suffixIcon: Icon( Icons.password )
-        ),
-      ),
-    );
-  }
+    final loginForm = Provider.of<LoginFormProvider>(context);
 
-  Widget _botonLogin(context) {
     return Container(
       padding: EdgeInsets.symmetric( horizontal: 100.0 ),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'home');
+
+          if( loginForm.isValidForm() ) {
+            Navigator.pushNamed(context, 'home');
+          } else {
+            return;
+          }
+          
         }, 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -112,4 +100,72 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _campoEmail(context){
+
+    final loginForm = Provider.of<LoginFormProvider>(context);
+
+    return Container(
+      padding: EdgeInsets.symmetric( horizontal: 20.0 ),
+      child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        cursorColor: Color(0xffA4A4A4),
+        style: TextStyle(
+          color: Colors.black
+        ),
+        decoration: InputDecorations.loginInputDecoration(
+          hintText: 'Correo Electrónico',
+          radioBorde: 20.0,
+          suffixIcon: Icons.email
+        ),
+        onChanged: ( value ) => loginForm.email = value,
+        validator: ( value ) {
+          String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+          RegExp regExp  = new RegExp(pattern);
+
+          return regExp.hasMatch(value ?? '')
+                  ? null
+                  : 'El valor ingresado no tiene formato de un correo.';
+        },
+      ),
+    );
+  }
+
+  Widget _campoPassword(context){
+
+    final loginForm = Provider.of<LoginFormProvider>(context);
+
+    return Container(
+      padding: EdgeInsets.symmetric( horizontal: 20.0 ),
+      child: TextFormField(
+        obscureText: true,
+        cursorColor: Color(0xffA4A4A4),
+        style: TextStyle(
+          color: Colors.black
+        ),
+        decoration: InputDecorations.loginInputDecoration(
+          hintText: 'Contraseña',
+          radioBorde: 20.0,
+          suffixIcon: Icons.lock
+        ),
+        onChanged: ( value ) => loginForm.password = value,
+        validator: ( value ) {
+          if( value != null && value.length >= 6 ) return null;
+          return 'La contraseña debe tener mínimo 6 caracteres.';
+        },
+      ),
+    );
+  }
+
 }
+
+Widget _logo() {
+  return Container(
+    padding: EdgeInsets.all(30),
+    child: FadeInImage(
+      placeholder: AssetImage('assets/jar-loading.gif'), 
+      image: AssetImage('assets/logoHD.png')
+    ),
+  );
+}
+

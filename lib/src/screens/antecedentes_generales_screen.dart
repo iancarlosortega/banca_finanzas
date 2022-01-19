@@ -19,14 +19,15 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
 
-          _datosGenerales(),
-          _antecedentesEmpresario(),
-          _antecedentesPareja(),
-          _matrimonio(),
-          _filosofiaCaracter(),
-          _metasPersonales(),
-          _administracionTiempo(),
-          _comentarioEjecutivo()
+          _DatosGenerales(),
+          _AntecedentesEmpresario(),
+          _AntecedentesPareja(),
+          _Matrimonio(),
+          _FilosofiaCaracter(),
+          _MetasPersonales(),
+          _AdministracionTiempo(),
+          _ComentarioEjecutivo(),
+          _Botones(),
 
         ])
       ),
@@ -45,7 +46,7 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
 
 }
 
-class _datosGenerales extends StatelessWidget {
+class _DatosGenerales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +94,7 @@ class _datosGenerales extends StatelessWidget {
   }
 }
 
-class _antecedentesEmpresario extends StatelessWidget {
+class _AntecedentesEmpresario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -366,7 +367,7 @@ class _antecedentesEmpresario extends StatelessWidget {
     );
   }
 }
-class _antecedentesPareja extends StatelessWidget {
+class _AntecedentesPareja extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -651,7 +652,7 @@ class _antecedentesPareja extends StatelessWidget {
   }
 }
 
-class _matrimonio extends StatelessWidget {
+class _Matrimonio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -780,7 +781,7 @@ class _matrimonio extends StatelessWidget {
   }
 }
 
-class _filosofiaCaracter extends StatelessWidget {
+class _FilosofiaCaracter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -818,7 +819,7 @@ class _filosofiaCaracter extends StatelessWidget {
   }
 }
 
-class _metasPersonales extends StatelessWidget {
+class _MetasPersonales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -878,7 +879,7 @@ class _metasPersonales extends StatelessWidget {
   }
 }
 
-class _administracionTiempo extends StatelessWidget {
+class _AdministracionTiempo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -949,7 +950,7 @@ class _administracionTiempo extends StatelessWidget {
   }
 }
 
-class _comentarioEjecutivo extends StatelessWidget {
+class _ComentarioEjecutivo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -973,6 +974,37 @@ class _comentarioEjecutivo extends StatelessWidget {
           SizedBox( height: 50.0 ),
         ],
       ),
+    );
+  }
+}
+
+class _Botones extends StatelessWidget {
+  const _Botones({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        CircleAvatar(
+          backgroundColor: Color(0xff4D5BA6),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'antecedentes_empresa');
+            },  
+            icon: Icon(Icons.arrow_back)
+          ),
+        ),
+        CircleAvatar(
+          backgroundColor: Color(0xff4D5BA6),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'familia_empresa');
+            },  
+            icon: Icon(Icons.arrow_forward)
+          ),
+        ),
+      ],
     );
   }
 }

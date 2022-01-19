@@ -32,10 +32,10 @@ class FamiliaEmpresaSreen extends StatelessWidget {
                 ),
 
                 
-
+              _Botones(),
               ])
       ),
-      bottomNavigationBar: button(context),
+      
     );
   }
 
@@ -103,80 +103,39 @@ class FamiliaEmpresaSreen extends StatelessWidget {
        ),Text(nombre ,style: const TextStyle( fontSize: 17,color: Color(0xff565D82))),
        ]))),
        )));
-     }
 
-  button(BuildContext context) { return Row(  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-   children: [
-     Padding(
-       padding: EdgeInsets.all(16.0),
-       child:
-       ElevatedButton(style: ButtonStyle(
-
-           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-             RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(18.0),
-               side: BorderSide(
-                 color: Color(0xff4D5BA6) ,
-                 width: 2.0,
-               ),
-             ),
-           ),   padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20)),
-           backgroundColor: MaterialStateProperty.all<Color>(Color(0xff4D5BA6))
-       ),
-           onPressed: () {
-             Navigator.pushNamed(context,"antecedentes");
-           },
-           child:  RichText(
-             text: TextSpan(
-               children: [
-                 WidgetSpan(
-                   child: Icon(Icons.arrow_left, size: 14),
-                 ),
-                 TextSpan(
-                   text: "Antecedentes de la empresa",style: const TextStyle( fontSize: 13,color: Colors.white)
-                 ),
-               ],
-             ),
-           )
-
-       ),),
-     Padding(
-         padding: EdgeInsets.all(16.0),
-         child:
-         ElevatedButton(style: ButtonStyle(
-
-             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-               RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(18.0),
-                 side: BorderSide(
-                   color: Color(0xff4D5BA6) ,
-                   width: 2.0,
-                 ),
-               ),
-             ),   padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20)),
-             backgroundColor: MaterialStateProperty.all<Color>(Color(0xff4D5BA6)),
-           foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-         ),
-             onPressed: () {
-               Navigator.pushNamed(context,"subsistema_mercado");
-             },
-
-             child:  RichText(
-               text: TextSpan(
-                 children: [
-                   TextSpan(
-                     text: "Subsistema de mercado",style: const TextStyle( fontSize: 13,color: Colors.white)
-                   ), WidgetSpan(
-                     child: Icon(Icons.arrow_right, size: 14),
-                   ),
-                 ],
-               ),
-             )
-
-         ))
-   ],
- );
 
   }
-   }
+}
+
+class _Botones extends StatelessWidget {
+  const _Botones({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        CircleAvatar(
+          backgroundColor: Color(0xff4D5BA6),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'antecedentes_generales');
+            },  
+            icon: Icon(Icons.arrow_back)
+          ),
+        ),
+        CircleAvatar(
+          backgroundColor: Color(0xff4D5BA6),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'subsistema_produccion');
+            },  
+            icon: Icon(Icons.arrow_forward)
+          ),
+        ),
+      ],
+    );
+  }
+}

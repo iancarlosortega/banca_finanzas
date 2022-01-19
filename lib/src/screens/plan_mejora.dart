@@ -13,7 +13,7 @@ class PlanMejoraScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff565D82),
-        title: Text('Antecedentes de la Empresa'),
+        title: Text('Plan de Mejora y Seguimiento'),
       ),
       body: SingleChildScrollView( 
         child: Column(
@@ -27,7 +27,7 @@ class PlanMejoraScreen extends StatelessWidget {
           _financiero(),
           _habilidades(),
           _directivo(),
-          _botones()
+          _Botones()
 
         ])
       ),
@@ -750,8 +750,8 @@ class _directivo extends StatelessWidget {
   }
 }
 
-class _botones extends StatelessWidget {
-  const _botones({Key? key}) : super(key: key);
+class _Botones extends StatelessWidget {
+  const _Botones({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -761,14 +761,18 @@ class _botones extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
-            onPressed: () {},  
+            onPressed: () {
+              Navigator.pushNamed(context, 'subsistema_finanzas');
+            },  
             icon: Icon(Icons.arrow_back)
           ),
         ),
         CircleAvatar(
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
-            onPressed: () {},  
+            onPressed: () {
+              Navigator.pushNamed(context, 'home');
+            },  
             icon: Icon(Icons.check)
           ),
         ),
@@ -776,4 +780,3 @@ class _botones extends StatelessWidget {
     );
   }
 }
-

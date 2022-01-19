@@ -58,9 +58,15 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         
-                        Icon(
-                            Icons.logout,
-                            color: Colors.white,
+                        IconButton(
+                          icon: Icon(
+                              Icons.logout,
+                              color: Colors.white,
+                              size: 35,
+                              
+                          ), onPressed: () {
+                            Navigator.pushNamed(context, 'login');
+                            },
                         ),
                         Container(
                           height: MediaQuery.of(context).size.height*0.2,
@@ -108,7 +114,9 @@ class HomeScreen extends StatelessWidget {
         visible: !keyboardIsOpen,
         child: FloatingActionButton(
           backgroundColor: Color(0xff565D82),
-          onPressed: (){},
+          onPressed: (){
+             Navigator.pushNamed(context, 'antecedentes_empresa');
+          },
           child: Icon(Icons.add),
         ),
       ),

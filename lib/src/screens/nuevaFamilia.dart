@@ -4,15 +4,14 @@ import 'package:banca_finanzas/src/widgets/bottom_navigation_bar.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+
 class nuevaFamilia extends StatelessWidget {
   const nuevaFamilia({Key? key}) : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Nuevo familiar en la empresa',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xff565D82),
           title: Text('Nuevo familiar en la empresa'),
@@ -60,9 +59,8 @@ class nuevaFamilia extends StatelessWidget {
                 ))
         ]),
       ),
-    ));
+    );
   }
-
 }
 
 enum tipoApoyo { Moral, Operacional, Supervicion, Gerencia, Direccion}

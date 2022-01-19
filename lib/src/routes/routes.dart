@@ -6,6 +6,10 @@ import 'package:banca_finanzas/src/screens/nuevaFamilia.dart';
 import 'package:banca_finanzas/src/screens/splash_screen.dart';
 import 'package:banca_finanzas/src/screens/subsistema_finanzas.dart';
 import 'package:banca_finanzas/src/screens/subsistema_mercado.dart';
+import 'package:banca_finanzas/src/screens/subsistema_produccion.dart';
+import 'package:banca_finanzas/src/screens/subsistema_personal.dart';
+import 'package:banca_finanzas/src/screens/subsistema_legal.dart';
+import 'package:banca_finanzas/src/screens/plan_mejora.dart';
 import 'package:flutter/material.dart';
 
 //Pantallas
@@ -17,11 +21,16 @@ Map<String, WidgetBuilder> getRoutes() {
     '/' : (BuildContext context) => SplashSreen(),
     'login' : (BuildContext context) => LoginScreen(),
     'home' : (BuildContext context) => HomeScreen(),
-    'antecedentes' : (BuildContext context) => AntecedentesGeneralesScreen(),
     'antecedentes_empresa' : (BuildContext context) => AntecedentesEmpresaScreen(),
-    'subsistema_mercado' : (BuildContext context) => SubsistemaMercadoSreen() ,
-    'subsistema_finanzas' : (BuildContext context) => subsistema_finanzas() ,
+    'antecedentes_generales' : (BuildContext context) => AntecedentesGeneralesScreen(),
     'familia_empresa' : (BuildContext context) => FamiliaEmpresaSreen(),
     'nuevaFamilia' : (BuildContext context) => nuevaFamilia(),
+    'subsistema_mercado' : (BuildContext context) => SubsistemaMercadoSreen() ,
+    'subsistema_produccion' : (BuildContext context) => SubsistemProduccionSreen() ,
+    'subsistema_personal' : (BuildContext context) => SubsistemPersonalSreen() ,
+    'subsistema_legal' : (BuildContext context) => SubsistemaLegalSreen() ,
+    'subsistema_finanzas' : (BuildContext context) => SubsistemaFinanzasSreen() ,
+
+    'plan_mejora' : (BuildContext context) => PlanMejoraScreen(),
   };
 }

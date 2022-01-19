@@ -20,14 +20,15 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
 
-          _datosGenerales(),
-          _antiguedadEmpresa(),
-          _estatusLegal(),
-          _estatusFiscal(),
-          _tamanioEmpresa(),
-          _coberturaMercado(),
-          _visionEmpresa(),
-          _comentarioAntecedentes()
+          _DatosGenerales(),
+          _AntiguedadEmpresa(),
+          _EstatusLegal(),
+          _EstatusFiscal(),
+          _TamanioEmpresa(),
+          _CoberturaMercado(),
+          _VisionEmpresa(),
+          _ComentarioAntecedentes(),
+          _Botones(),
 
         ])
       ),
@@ -45,7 +46,7 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
   }
 }
   
-class _datosGenerales extends StatelessWidget {
+class _DatosGenerales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +116,7 @@ class _datosGenerales extends StatelessWidget {
   }
 }
 
-class _antiguedadEmpresa extends StatelessWidget {
+class _AntiguedadEmpresa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +142,7 @@ class _antiguedadEmpresa extends StatelessWidget {
   }
 }
 
-class _estatusLegal extends StatelessWidget {
+class _EstatusLegal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +190,7 @@ class _estatusLegal extends StatelessWidget {
   }
 }
 
-class _estatusFiscal extends StatelessWidget {
+class _EstatusFiscal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -215,7 +216,7 @@ class _estatusFiscal extends StatelessWidget {
   }
 }
 
-class _tamanioEmpresa extends StatelessWidget {
+class _TamanioEmpresa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -378,7 +379,7 @@ class _tamanioEmpresa extends StatelessWidget {
   }
 }
 
-class _coberturaMercado extends StatelessWidget {
+class _CoberturaMercado extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -426,7 +427,7 @@ class _coberturaMercado extends StatelessWidget {
   }
 }
 
-class _visionEmpresa extends StatelessWidget {
+class _VisionEmpresa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -463,7 +464,7 @@ class _visionEmpresa extends StatelessWidget {
   }
 }
 
-class _comentarioAntecedentes extends StatelessWidget {
+class _ComentarioAntecedentes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -487,6 +488,37 @@ class _comentarioAntecedentes extends StatelessWidget {
           SizedBox( height: 50.0 ),
         ],
       ),
+    );
+  }
+}
+
+class _Botones extends StatelessWidget {
+  const _Botones({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        CircleAvatar(
+          backgroundColor: Color(0xff4D5BA6),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'home');
+            },  
+            icon: Icon(Icons.arrow_back)
+          ),
+        ),
+        CircleAvatar(
+          backgroundColor: Color(0xff4D5BA6),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'antecedentes_generales');
+            },  
+            icon: Icon(Icons.arrow_forward)
+          ),
+        ),
+      ],
     );
   }
 }

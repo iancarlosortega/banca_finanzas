@@ -3,8 +3,8 @@ import 'package:banca_finanzas/src/widgets/number_stars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class SubsistemaMercadoSreen extends StatelessWidget {
-  const SubsistemaMercadoSreen({Key? key}) : super(key: key);
+class SubsistemProduccionSreen extends StatelessWidget {
+  const SubsistemProduccionSreen({Key? key}) : super(key: key);
   
 
   @override
@@ -13,7 +13,7 @@ class SubsistemaMercadoSreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff565D82),
-        title: Text('Subsistema de Mercado'),
+        title: Text('Subsistema de Producción'),
       ),
       body: SingleChildScrollView( 
         child: Padding(
@@ -22,17 +22,17 @@ class SubsistemaMercadoSreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
 
-              NumberStars( text: 'Mercado: 115'),
+              NumberStars( text: 'Producción: 85'),
               SizedBox(height: 10),
-              _Producto(),
+              _Materiales(),
               SizedBox(height: 10),
-              _Segmento(),
+              _Ubicacion(),
               SizedBox(height: 10),
-              _Cliente(),
+              _Lugar(),
               SizedBox(height: 10),
-              _Expectativa(),
+              _Maquinaria(),
               SizedBox(height: 10),
-              _Comercializacion(),
+              _Calidad(),
               SizedBox(height: 10),
               _Reportes(),
               SizedBox(height: 10),
@@ -48,14 +48,16 @@ class SubsistemaMercadoSreen extends StatelessWidget {
   }
 }
 
-class _Producto extends StatelessWidget {
+class _Materiales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('1.Producto', textAlign: TextAlign.left),
+        Text('1.Materiales'),
+        SizedBox( height: 10),
+        Text('¿La cantidad de materiales es la adecuada?'),
         SizedBox( height: 10),
         Container(
           child: Column(
@@ -67,7 +69,7 @@ class _Producto extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Rentabilidad de los productos'),
+                    Text('Compras'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -85,7 +87,7 @@ class _Producto extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Nuevos productos'),
+                    Text('Inventarios'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -97,20 +99,9 @@ class _Producto extends StatelessWidget {
               ),
             ],
           ),
-        )
-      ],
-    );
-  }
-}
-class _Segmento extends StatelessWidget {
-  const _Segmento({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('2.Segmento'),
+        ),
+        SizedBox( height: 10),
+        Text('¿La calidad de materiales es la adecuada?'),
         SizedBox( height: 10),
         Container(
           child: Column(
@@ -122,7 +113,7 @@ class _Segmento extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Conoce sus clientes'),
+                    Text('Atributos físicos'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -140,24 +131,7 @@ class _Segmento extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Flexible(child: Text('Sabe la distribución y proporción por productos y/o servicio')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Conoce la magnitud del mercado'),
+                    Text('Estandarización'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -175,7 +149,7 @@ class _Segmento extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Sabe indicadores claves del mercado'),
+                    Text('Trabajabilidad'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -193,7 +167,7 @@ class _Segmento extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Sabe otras fuentes de información'),
+                    Text('Disponibilidad'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -211,156 +185,7 @@ class _Segmento extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Conoce su mercado potencial actual'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('Conoce su mercado potencial en tendencia')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class _Cliente extends StatelessWidget {
-  const _Cliente({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('3.Cliente', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Container(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Usuario'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Decisor'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('De los recursos'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class _Expectativa extends StatelessWidget {
-  const _Expectativa({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('4.Expectativa', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Text('¿Por que compran sus productos?', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Container(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Calidad'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Servicio'),
+                    Text('Tiempo de entregas'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -391,135 +216,18 @@ class _Expectativa extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox( height: 10),
-        Text('Competencia', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Container(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Los puede identificar?'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Evalue la cantidad'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Evalue la calidad'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Evalue la precios'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('Conoce las fortalezas de su competencia?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('Conoce las debilidades de su competencia?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
       ],
     );
   }
 }
-class _Comercializacion extends StatelessWidget {
-  const _Comercializacion({Key? key}) : super(key: key);
+class _Ubicacion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('5.Comercialización', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Text('Sistemas de información', textAlign: TextAlign.left),
+        Text('2. ¿La ubicación del lugar de trabajo es adecuada?'),
         SizedBox( height: 10),
         Container(
           child: Column(
@@ -531,66 +239,7 @@ class _Comercializacion extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Flexible(child: Text('¿Se anuncian bien en medios personales?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('¿Se anuncian bien en medios masivos?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('¿El anuncion transmite el mensaje deseado?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox( height: 10),
-        Text('Imagen corporativa', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Container(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Emblema'),
+                    Text('Materia prima'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -608,50 +257,7 @@ class _Comercializacion extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Logotipo'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox( height: 10),
-        Text('Ventas', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Container(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('¿Administra su número de vendedores?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('¿Administra el reparto del territorio?'),
+                    Text('Mano de obra'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -662,133 +268,6 @@ class _Comercializacion extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('¿Administra el equipo (fisico) de ventas?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('¿Tiene un plan de presentacion?'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('¿Controla las cuotas de las ventas?'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('¿Controla los presupuestos de las ventas?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('¿Controla los reportes de las ventas?'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Flexible(child: Text('¿Controla la rentabilidad de cada vendedor?')),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class _Reportes extends StatelessWidget {
-  const _Reportes({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('6.Reportes de Mercado', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Text('Quien', textAlign: TextAlign.left),
-        SizedBox( height: 10),
-        Container(
-          child: Column(
-            children: [
               Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
@@ -814,7 +293,7 @@ class _Reportes extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Producto y/o servicio'),
+                    Text('Medio ambiente'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -832,7 +311,44 @@ class _Reportes extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Canal de distribución'),
+                    Text('Económico'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _Lugar extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('3. Lugar de trabajo'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Edificio'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -850,7 +366,33 @@ class _Reportes extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Precio'),
+                    Text('Espacion'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox( height: 10),
+        Text('Ambientación'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Temperatura'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -868,7 +410,7 @@ class _Reportes extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Competencia'),
+                    Text('Luz'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -886,7 +428,7 @@ class _Reportes extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Sistemas de información'),
+                    Text('Ruido'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -904,7 +446,495 @@ class _Reportes extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Ventas'),
+                    Text('Colores'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Ventilación'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Instalaciones sanitarias'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Lockers'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Alimentos'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox( height: 10),
+        Text('Distribución'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Por puesto'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Por taller'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Por linea'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _Maquinaria extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('5.¿La maquinaria y equipo es?'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Adecuado'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Suficiente'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Mantenimiento'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _Calidad extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('6. ¿La calidad?'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('¿Es estándar?'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('¿Se hacen mejoras a procesos?'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('¿Se actualiza la tecnología?'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+class _Reportes extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('7. Reportes de Producción'),
+        SizedBox( height: 10),
+        Text('Quien'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Calidad de los materiales'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Costo de los materiales'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Inventarios de los materiales'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Desperdicios'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Rechazos de los productos'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox( height: 10),
+        Text('Forma'),
+        SizedBox( height: 10),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Lírico'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Manual'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Computarizado'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Personal'),
+                    Expanded(child: Container()),
+                    RatingBar.builder(
+                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                      onRatingUpdate: (rating) {},
+                      itemSize: 25,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color(0xff96C4F4)
+                ),
+                child: Row(
+                  children: [
+                    Text('Organizacional'),
                     Expanded(child: Container()),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
@@ -930,7 +960,7 @@ class _Comentarios extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('7. Comentarios de Mercado Paramétrico', textAlign: TextAlign.left),
+        Text('8. Comentarios de Producción Paramétrico', textAlign: TextAlign.left),
         SizedBox( height: 10),
         Container(
           child: Column(
@@ -968,7 +998,7 @@ class _Botones extends StatelessWidget {
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'familia_empresa');
+              Navigator.pushNamed(context, 'subsistema_mercado');
             },  
             icon: Icon(Icons.arrow_back)
           ),
@@ -977,7 +1007,7 @@ class _Botones extends StatelessWidget {
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'subsistema_produccion');
+              Navigator.pushNamed(context, 'subsistema_personal');
             },  
             icon: Icon(Icons.arrow_forward)
           ),

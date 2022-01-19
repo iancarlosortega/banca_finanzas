@@ -53,7 +53,57 @@ class InputDecorations {
         suffixIcon: Icon( suffixIcon, color: Color(0xff565D82) ) 
     );
   }
-
+  static InputDecoration searchDecoration({
+    required String hintText,
+    IconData? suffixIcon,
+    double? radioBorde
+  }) {
+    return InputDecoration(
+        contentPadding: EdgeInsets.all( 10.0 ),
+        fillColor: Colors.white,
+        filled: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(radioBorde ?? 5.0),
+            borderSide: BorderSide(
+                color: Color(0xffCDCDCD),
+                width: 2.0
+            )
+        ),
+        disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(radioBorde ?? 5.0),
+            borderSide: BorderSide(
+                color: Color(0xffCDCDCD),
+                width: 2.0
+            )
+        ),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(radioBorde ?? 5.0),
+            borderSide: BorderSide(
+                color: Color(0xff565D82),
+                width: 2.0
+            )
+        ),
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(radioBorde ?? 5.0),
+            borderSide: BorderSide(
+                color: Colors.red,
+                width: 2.0
+            )
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(radioBorde ?? 5.0),
+            borderSide: BorderSide(
+                color: Colors.red,
+                width: 2.0
+            )
+        ),
+        hintText: hintText,
+        hintStyle: TextStyle(
+          color: Color(0xffCDCDCD),
+        ),
+        suffixIcon: Icon( suffixIcon, color: Color(0xff4D5BA6) )
+    );
+  }
 }
 
 class TextFieldWidget extends StatelessWidget {

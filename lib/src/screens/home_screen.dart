@@ -26,6 +26,18 @@ class HomeScreen extends StatelessWidget {
               }, 
               child: Text('Antecedentes de la Empresa')
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'nuevaFamilia');
+                },
+                child: Text('Nueva Familia')
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'subsistema_finanzas');
+                },
+                child: Text('subsistema_finanzas')
+            ),
           ],
         ),
       ),

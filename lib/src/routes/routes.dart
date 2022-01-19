@@ -2,7 +2,9 @@ import 'package:banca_finanzas/src/screens/antecedentes_empresa_screen.dart';
 import 'package:banca_finanzas/src/screens/antecedentes_generales_screen.dart';
 import 'package:banca_finanzas/src/screens/familia_empresa_screen.dart';
 import 'package:banca_finanzas/src/screens/login_screen.dart';
+import 'package:banca_finanzas/src/screens/nuevaFamilia.dart';
 import 'package:banca_finanzas/src/screens/splash_screen.dart';
+import 'package:banca_finanzas/src/screens/subsistema_finanzas.dart';
 import 'package:banca_finanzas/src/screens/subsistema_mercado.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +20,8 @@ Map<String, WidgetBuilder> getRoutes() {
     'antecedentes' : (BuildContext context) => AntecedentesGeneralesScreen(),
     'antecedentes_empresa' : (BuildContext context) => AntecedentesEmpresaScreen(),
     'subsistema_mercado' : (BuildContext context) => SubsistemaMercadoSreen() ,
+    'subsistema_finanzas' : (BuildContext context) => subsistema_finanzas() ,
     'familia_empresa' : (BuildContext context) => FamiliaEmpresaSreen(),
+    'nuevaFamilia' : (BuildContext context) => nuevaFamilia(),
   };
 }

@@ -209,8 +209,7 @@ class _Empresa extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Se tiene las licensias y permisos en regla'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Se tiene las licensias y permisos en regla')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -233,8 +232,7 @@ class _Empresa extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Se tienen los registros de marcas y patentes'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Se tienen los registros de marcas y patentes')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -323,8 +321,7 @@ class _Laboral extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('¿El patrón conoce obligaciones y prohibiciones?'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('¿El patrón conoce obligaciones y prohibiciones?')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -359,8 +356,7 @@ class _Laboral extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Conoce usted acerca de sus trabajadores'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Conoce usted acerca de sus trabajadores')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -377,8 +373,7 @@ class _Laboral extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Sabe como se determina la relación laboral'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Sabe como se determina la relación laboral')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -395,8 +390,7 @@ class _Laboral extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Sabe como se realiza una indemnización'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Sabe como se realiza una indemnización')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},

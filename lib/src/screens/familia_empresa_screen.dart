@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:banca_finanzas/src/widgets/bottom_navigation_bar.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
+import 'package:flutter/material.dart';
 
 class FamiliaEmpresaSreen extends StatelessWidget {
    FamiliaEmpresaSreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
 
     return  Scaffold(
       appBar: AppBar(
@@ -54,7 +56,7 @@ class FamiliaEmpresaSreen extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all<Color>(Color(0xff4D5BA6))
     ),
     child: Text('+ Agregar familiar ',style: TextStyle(fontSize: 24)),
-    onPressed: () {Navigator.pushNamed(context,"nueva_familia");},
+    onPressed: () {Navigator.pushNamed(context,"nuevaFamilia");},
   );
    }
 

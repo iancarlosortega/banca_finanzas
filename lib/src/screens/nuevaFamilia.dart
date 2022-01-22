@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:banca_finanzas/src/widgets/widgets.dart';
+import 'package:banca_finanzas/src/widgets/bottom_navigation_bar.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 
-class NuevaFamiliaScreen extends StatelessWidget {
-  const NuevaFamiliaScreen({Key? key}) : super(key: key);
+class nuevaFamilia extends StatelessWidget {
+  const nuevaFamilia({Key? key}) : super(key: key);
 
 
   @override
@@ -40,7 +41,7 @@ class NuevaFamiliaScreen extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all<Color>(Color(0xff4D5BA6))
                 ),
                     onPressed: () {
-                      Navigator.pushNamed(context,"familia_empresa");
+                      Navigator.pushNamed(context,"antecedentes");
                     },
                     child:  RichText(
                       text: TextSpan(

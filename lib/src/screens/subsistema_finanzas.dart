@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:banca_finanzas/src/widgets/number_stars.dart';
 import 'package:banca_finanzas/src/widgets/titulo.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class SubsistemaFinanzasSreen extends StatelessWidget {
@@ -25,27 +25,27 @@ class SubsistemaFinanzasSreen extends StatelessWidget {
 
               NumberStars( text: 'Finanzas: 90'),
               SizedBox(height: 10),
-              _Historia(),
+              _historia(),
               SizedBox(height: 10),
-              _Sistema(),
+              _sistema(),
               SizedBox(height: 10),
-              _Punto(),
+              _punto(),
               SizedBox(height: 10),
-              _Contabilidad(),
+              contabilidad(),
               SizedBox(height: 10),
-              _Presupuesto(),
+              presupuesto(),
               SizedBox(height: 10),
-              _Financiera(),
+              financiera(),
               SizedBox(height: 10),
-              _Finanzas(),
+              finanzas(),
               SizedBox(height: 10),
-              _Admin(),
+              admin(),
               SizedBox(height: 10),
-              _Oficina(),
+              oficina(),
               SizedBox(height: 10),
-              _Seguros(),
+              seguros(),
               SizedBox(height: 10),
-              _Reportes(),
+              reportes(),
               SizedBox(height: 10),
               _Comentarios(),
               SizedBox(height: 10),
@@ -59,7 +59,7 @@ class SubsistemaFinanzasSreen extends StatelessWidget {
   }
 }
 
-class _Historia extends StatelessWidget {
+class _historia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +73,8 @@ class _Historia extends StatelessWidget {
     );
   }
 }
-class _Sistema extends StatelessWidget {
-  const _Sistema({Key? key}) : super(key: key);
+class _sistema extends StatelessWidget {
+  const _sistema({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,8 +111,7 @@ class _Sistema extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Variables'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Variables')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -130,8 +129,8 @@ class _Sistema extends StatelessWidget {
   }
 }
 
-class _Punto extends StatelessWidget {
-  const _Punto({Key? key}) : super(key: key);
+class _punto extends StatelessWidget {
+  const _punto({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -151,8 +150,8 @@ class _Punto extends StatelessWidget {
   }
 }
 
-class _Contabilidad extends StatelessWidget {
-  const _Contabilidad({Key? key}) : super(key: key);
+class contabilidad extends StatelessWidget {
+  const contabilidad({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -171,8 +170,8 @@ class _Contabilidad extends StatelessWidget {
     );
   }
 }
-class _Presupuesto extends StatelessWidget {
-  const _Presupuesto({Key? key}) : super(key: key);
+class presupuesto extends StatelessWidget {
+  const presupuesto({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -191,8 +190,8 @@ class _Presupuesto extends StatelessWidget {
     );
   }
 }
-class _Oficina extends StatelessWidget {
-  const _Oficina({Key? key}) : super(key: key);
+class oficina extends StatelessWidget {
+  const oficina({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -213,8 +212,8 @@ class _Oficina extends StatelessWidget {
 }
 
 
-class _Financiera extends StatelessWidget {
-  const _Financiera({Key? key}) : super(key: key);
+class financiera extends StatelessWidget {
+  const financiera({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -343,8 +342,8 @@ class _Financiera extends StatelessWidget {
   }
 }
 
-class _Finanzas extends StatelessWidget {
-  const _Finanzas({Key? key}) : super(key: key);
+class finanzas extends StatelessWidget {
+  const finanzas({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -363,8 +362,7 @@ class _Finanzas extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Liquidez'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Liquidez')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -381,8 +379,7 @@ class _Finanzas extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Deuda'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Deuda')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -399,8 +396,7 @@ class _Finanzas extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Renta'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Renta')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                       onRatingUpdate: (rating) {},
@@ -418,8 +414,8 @@ class _Finanzas extends StatelessWidget {
   }
 }
 
-class _Seguros extends StatelessWidget {
-  const _Seguros({Key? key}) : super(key: key);
+class seguros extends StatelessWidget {
+  const seguros({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -438,8 +434,7 @@ class _Seguros extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Maquinaria'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Maquinaria')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
                       onRatingUpdate: (rating) {},
@@ -456,8 +451,7 @@ class _Seguros extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Edificio'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Edificio')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
                       onRatingUpdate: (rating) {},
@@ -474,8 +468,7 @@ class _Seguros extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Equipo'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Equipo')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
                       onRatingUpdate: (rating) {},
@@ -492,8 +485,7 @@ class _Seguros extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Gastos médicos'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Gastos médicos')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
                       onRatingUpdate: (rating) {},
@@ -510,8 +502,7 @@ class _Seguros extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('Vida'),
-                    Expanded(child: Container()),
+                    Flexible(child: Text('Vida')),
                     RatingBar.builder(
                       itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
                       onRatingUpdate: (rating) {},
@@ -528,8 +519,8 @@ class _Seguros extends StatelessWidget {
     );
   }
 }
-class _Admin extends StatelessWidget {
-  const _Admin({Key? key}) : super(key: key);
+class admin extends StatelessWidget {
+  const admin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -718,8 +709,8 @@ class _Admin extends StatelessWidget {
     );
   }
 }
-class _Reportes extends StatelessWidget {
-  const _Reportes({Key? key}) : super(key: key);
+class reportes extends StatelessWidget {
+  const reportes({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

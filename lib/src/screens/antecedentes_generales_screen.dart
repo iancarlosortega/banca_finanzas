@@ -30,7 +30,17 @@ class AntecedentesGeneralesScreen extends StatelessWidget {
           _Botones(),
 
         ])
-      )
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Visibility(
+        visible: !keyboardIsOpen,
+        child: FloatingActionButton(
+          backgroundColor: Color(0xff565D82),
+          onPressed: (){},
+          child: Icon(Icons.add),
+        ),
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 

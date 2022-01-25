@@ -1,15 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class SplashSreen extends StatefulWidget {
   const SplashSreen({Key? key}) : super(key: key);
 
   @override
+
   _SplashSreenState createState() => _SplashSreenState();
 }
 
 class _SplashSreenState extends State<SplashSreen> {
 
   @override
+
   void initState() {
     super.initState();
     _navigateLogin();
@@ -22,6 +25,7 @@ class _SplashSreenState extends State<SplashSreen> {
 
   @override
   Widget build(BuildContext context) {
+    Firebase.initializeApp();
 
     return Scaffold(
       body:  Container(

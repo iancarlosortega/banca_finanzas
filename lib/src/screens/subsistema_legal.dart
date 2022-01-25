@@ -1,3 +1,4 @@
+import 'package:banca_finanzas/main.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:banca_finanzas/src/widgets/number_stars.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,35 @@ double proveedores3 = 0.0;
 double clientes1 = 0.0;
 double clientes2 = 0.0;
 double clientes3 = 0.0;
-
+reiniciarsl(){
+  total = 0.0;
+  totalEmpresa = 0.0;
+  totalLaboral = 0.0;
+  totalProveedor = 0.0;
+  totalClientes = 0.0;
+  empresa1 = 0.0;
+  empresa2 = 0.0;
+  empresa3 = 0.0;
+  empresa4 = 0.0;
+  empresa5 = 0.0;
+  empresa6 = 0.0;
+  empresa7 = 0.0;
+  empresa8 = 0.0;
+  laboral1 = 0.0;
+  laboral2 = 0.0;
+  laboral3 = 0.0;
+  laboral4 = 0.0;
+  laboral5 = 0.0;
+  laboral6 = 0.0;
+  laboral7 = 0.0;
+  laboral8 = 0.0;
+  proveedores1 = 0.0;
+  proveedores2 = 0.0;
+  proveedores3 = 0.0;
+  clientes1 = 0.0;
+  clientes2 = 0.0;
+  clientes3 = 0.0;
+}
 class SubsistemaLegalSreen extends StatefulWidget {
   const SubsistemaLegalSreen({Key? key}) : super(key: key);
 
@@ -688,6 +717,7 @@ class _SubsistemaLegalSreenState extends State<SubsistemaLegalSreen> {
                                     clientes3 = rating;
                                     totalClientes = clientes1 + clientes2 + clientes3;
                                     total = totalEmpresa + totalLaboral + totalProveedor + totalClientes;
+                                    totalsl =total;
                                   });
                                 },
                                 itemCount: 3,
@@ -1285,6 +1315,7 @@ class _Botones extends StatelessWidget {
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
             onPressed: () {
+              reiniciarsl();
               Navigator.pushNamed(context, 'subsistema_finanzas');
             },  
             icon: Icon(Icons.arrow_forward)

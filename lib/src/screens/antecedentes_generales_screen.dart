@@ -1,3 +1,4 @@
+import 'package:banca_finanzas/main.dart';
 import 'package:banca_finanzas/src/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -58,6 +59,11 @@ class _DatosGenerales extends StatelessWidget {
           SizedBox( height: 10.0 ),
           TextFormField(
             keyboardType: TextInputType.text,
+            initialValue: agNombre,
+
+            onChanged: (value) {
+                agNombre = value;
+              },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -69,6 +75,11 @@ class _DatosGenerales extends StatelessWidget {
           SizedBox( height: 10.0 ),
           TextFormField(
             keyboardType: TextInputType.text,
+            initialValue: agDireccion,
+
+            onChanged: (value) {
+              agDireccion = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -80,7 +91,12 @@ class _DatosGenerales extends StatelessWidget {
           SizedBox( height: 10.0 ),
           TextFormField(
             keyboardType: TextInputType.text,
+            initialValue: agTelefono,
+
             cursorColor: Color(0xffA4A4A4),
+            onChanged: (value) {
+              agTelefono = value;
+            },
             style: TextStyle(
               color: Colors.black
             ),
@@ -114,7 +130,11 @@ class _AntecedentesEmpresario extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agCiudad,
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agCiudad = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -125,7 +145,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agLugar,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agLugar = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -136,7 +161,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEdad,
+
                   keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    agEdad = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -147,7 +177,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEstado,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEstado = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -158,7 +193,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOcupacion,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOcupacion = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -169,7 +209,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEscolaridad,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEscolaridad = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -180,7 +225,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEstadoSalud,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEstadoSalud = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -191,8 +241,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agComentarios,
                   maxLines: null,
                   keyboardType: TextInputType.multiline,
+                  onChanged: (value) {
+                    agComentarios = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -210,7 +264,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agNombresP,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agNombresP = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -221,7 +280,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpOrigen,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agpOrigen = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -232,7 +296,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpViven,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agpViven = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -243,7 +312,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpLugar,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agpLugar = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -254,7 +328,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpEdad,
+
                   keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    agpEdad = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -265,7 +344,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpOcupacion,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agpOcupacion = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -276,7 +360,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpEscolaridad,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agpEscolaridad = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -287,7 +376,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpEstado,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agpEstado = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -298,8 +392,13 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agpComentarios,
+
                   maxLines: null,
                   keyboardType: TextInputType.multiline,
+                  onChanged: (value) {
+                    agpComentarios = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -317,8 +416,13 @@ class _AntecedentesEmpresario extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agNombres,
+
                   keyboardType: TextInputType.text,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agNombres = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -328,7 +432,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEdades,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEdades = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -339,7 +448,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOcupaciones,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOcupaciones = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -350,7 +464,12 @@ class _AntecedentesEmpresario extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agLugar2,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agLugar2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -387,7 +506,12 @@ class _AntecedentesPareja extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agNombre3,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agNombre3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -398,7 +522,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOrigen,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOrigen = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -409,7 +538,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agVive,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agVive = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -420,7 +554,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agLugar3,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agLugar3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -431,7 +570,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEdad2,
+
                   keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    agEdad2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -442,7 +586,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOcupacion2,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOcupacion2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -453,7 +602,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEscolaridad2,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEscolaridad2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -464,7 +618,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEstado2,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEstado2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -475,8 +634,13 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agComentarios2,
+
                   maxLines: null,
                   keyboardType: TextInputType.multiline,
+                  onChanged: (value) {
+                    agComentarios2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -494,7 +658,12 @@ class _AntecedentesPareja extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agNombres3,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agNombres3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -505,7 +674,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOriginarios,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOriginarios = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -516,7 +690,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agViven,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agViven = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -527,7 +706,11 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agLugar4,
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agLugar4 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -538,7 +721,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEdad3,
+
                   keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    agEdad3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -549,7 +737,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOcupacion3,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOcupacion3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -560,7 +753,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEscolaridad3,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEscolaridad3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -571,7 +769,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEstado3,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agEstado3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -582,8 +785,13 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agComentarios3,
+
                   maxLines: null,
                   keyboardType: TextInputType.multiline,
+                  onChanged: (value) {
+                    agComentarios3 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -601,8 +809,13 @@ class _AntecedentesPareja extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agNombres4,
+
                   keyboardType: TextInputType.text,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agNombres4 = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -612,8 +825,13 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agEdades2,
+
                   keyboardType: TextInputType.number,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agEdades2 = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -623,7 +841,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agOcupaciones2,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agOcupaciones2 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -634,7 +857,12 @@ class _AntecedentesPareja extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agLugar5,
+
                   keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    agLugar5 = value;
+                  },
                   cursorColor: Color(0xffA4A4A4),
                   style: TextStyle(
                     color: Colors.black
@@ -672,8 +900,13 @@ class _Matrimonio extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agcasados,
+
                   keyboardType: TextInputType.number,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agcasados = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -690,8 +923,13 @@ class _Matrimonio extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agSituacion,
+
                   keyboardType: TextInputType.number,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agSituacion = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -708,8 +946,13 @@ class _Matrimonio extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: agnhijos,
+
                   keyboardType: TextInputType.number,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agnhijos = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -719,8 +962,13 @@ class _Matrimonio extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: aghedad,
+
                   keyboardType: TextInputType.number,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    aghedad = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -730,8 +978,13 @@ class _Matrimonio extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: agheocu,
+
                   keyboardType: TextInputType.text,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    agheocu = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -741,8 +994,13 @@ class _Matrimonio extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: aghesta,
+
                   keyboardType: TextInputType.text,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    aghesta = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -752,8 +1010,13 @@ class _Matrimonio extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: aghesc,
+
                   keyboardType: TextInputType.text,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    aghesc = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -763,8 +1026,13 @@ class _Matrimonio extends StatelessWidget {
                 ),
                 SizedBox( height: 10 ),
                 TextFormField(
+                  initialValue: aghsal,
+
                   keyboardType: TextInputType.text,
                   cursorColor: Color(0xffA4A4A4),
+                  onChanged: (value) {
+                    aghsal = value;
+                  },
                   style: TextStyle(
                     color: Colors.black
                   ),
@@ -792,7 +1060,12 @@ class _FilosofiaCaracter extends StatelessWidget {
           Titulo(titulo: 'Filosofía y/o Carácter'),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agHobbies,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agHobbies = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -803,7 +1076,12 @@ class _FilosofiaCaracter extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agComentarios4,
+
             maxLines: null,
+            onChanged: (value) {
+              agComentarios4 = value;
+            },
             keyboardType: TextInputType.multiline,
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
@@ -830,7 +1108,12 @@ class _MetasPersonales extends StatelessWidget {
           Titulo(titulo: 'Metas Personales'),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agProfesionales,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agProfesionales = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -841,7 +1124,12 @@ class _MetasPersonales extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agAfectivas,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agAfectivas = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -852,7 +1140,12 @@ class _MetasPersonales extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agFisicas,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agFisicas = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -863,7 +1156,12 @@ class _MetasPersonales extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agComentarios5,
+
             maxLines: null,
+            onChanged: (value) {
+              agComentarios5 = value;
+            },
             keyboardType: TextInputType.multiline,
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
@@ -890,7 +1188,12 @@ class _AdministracionTiempo extends StatelessWidget {
           Titulo(titulo: 'Administración del tiempo'),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agDia,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agDia = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -901,7 +1204,12 @@ class _AdministracionTiempo extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agSemana,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agSemana = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -912,7 +1220,12 @@ class _AdministracionTiempo extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agMes,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agMes = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -923,7 +1236,12 @@ class _AdministracionTiempo extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agAno,
+
             keyboardType: TextInputType.text,
+            onChanged: (value) {
+              agAno = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -934,8 +1252,13 @@ class _AdministracionTiempo extends StatelessWidget {
           ),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agComentarios6,
+
             maxLines: null,
             keyboardType: TextInputType.multiline,
+            onChanged: (value) {
+              agComentarios6 = value;
+            },
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
               color: Colors.black
@@ -961,7 +1284,12 @@ class _ComentarioEjecutivo extends StatelessWidget {
           Titulo(titulo: 'Comentario ejecutivo'),
           SizedBox( height: 10.0 ),
           TextFormField(
+            initialValue: agejecutivo,
+
             maxLines: null,
+            onChanged: (value) {
+              agejecutivo = value;
+            },
             keyboardType: TextInputType.multiline,
             cursorColor: Color(0xffA4A4A4),
             style: TextStyle(
@@ -1000,6 +1328,7 @@ class _Botones extends StatelessWidget {
           child: IconButton(
             onPressed: () {
               Navigator.pushNamed(context, 'familia_empresa');
+
             },  
             icon: Icon(Icons.arrow_forward)
           ),

@@ -1,3 +1,4 @@
+import 'package:banca_finanzas/main.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:banca_finanzas/src/widgets/number_stars.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,42 @@ double reclutamiento6 = 0.0;
 double reportes1 = 0.0;
 double reportes2 = 0.0;
 double reportes3 = 0.0;
-
+reiniciarspp(){
+  total = 0.0;
+  totalMision = 0.0;
+  totalOrganigrama = 0.0;
+  totalSupervisor = 0.0;
+  totalCapacitacion = 0.0;
+  totalReclutamiento = 0.0;
+  totalReportes = 0.0;
+  mision1 = 0.0;
+  mision2 = 0.0;
+  mision3 = 0.0;
+  mision4 = 0.0;
+  mision5 = 0.0;
+  mision6 = 0.0;
+  organigrama1 = 0.0;
+  organigrama2 = 0.0;
+  organigrama3 = 0.0;
+  organigrama4 = 0.0;
+  supervisor1 = 0.0;
+  supervisor2 = 0.0;
+  supervisor3 = 0.0;
+  supervisor4 = 0.0;
+  capacitacion1 = 0.0;
+  capacitacion2 = 0.0;
+  capacitacion3 = 0.0;
+  capacitacion4 = 0.0;
+  reclutamiento1 = 0.0;
+  reclutamiento2 = 0.0;
+  reclutamiento3 = 0.0;
+  reclutamiento4 = 0.0;
+  reclutamiento5 = 0.0;
+  reclutamiento6 = 0.0;
+  reportes1 = 0.0;
+  reportes2 = 0.0;
+  reportes3 = 0.0;
+}
 
 class SubsistemPersonalSreen extends StatefulWidget {
   const SubsistemPersonalSreen({Key? key}) : super(key: key);
@@ -811,6 +847,7 @@ class _SubsistemPersonalSreenState extends State<SubsistemPersonalSreen> {
                                   reportes3 = rating;
                                   totalReportes = reportes1 + reportes2 + reportes3;
                                   total = totalMision + totalOrganigrama + totalSupervisor + totalCapacitacion+ totalReclutamiento + totalReportes;
+                                  totalspe = total;
                                 });
                               },
                               itemCount: 5,
@@ -894,6 +931,7 @@ class _Botones extends StatelessWidget {
           child: IconButton(
             onPressed: () {
               Navigator.pushNamed(context, 'subsistema_legal');
+              reiniciarspp();
             },  
             icon: Icon(Icons.arrow_forward)
           ),

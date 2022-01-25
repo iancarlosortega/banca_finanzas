@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "46230293847",
+    "project_id": "fluter-a62ff",
+    "storage_bucket": "fluter-a62ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46230293847:android:3cb7b9788253c51a714212",
+        "android_client_info": {
+          "package_name": "com.example.banca_finanzas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46230293847-8tqkto9sjj5iqj1i3qp3vkpa4p54gsqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQiNee31IxsxfbAK2WrLI53mUA3upTwiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46230293847-8tqkto9sjj5iqj1i3qp3vkpa4p54gsqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

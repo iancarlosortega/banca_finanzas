@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:banca_finanzas/src/widgets/widgets.dart';
 import 'package:banca_finanzas/src/widgets/bottom_navigation_bar.dart';
@@ -5,12 +6,73 @@ import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 
+import '../../main.dart';
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
 class nuevaFamilia extends StatelessWidget {
   const nuevaFamilia({Key? key}) : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
+
+    var datos = Container(
+      padding: EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Titulo(titulo: 'Datos Familiar'),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            initialValue: nfNombre2,
+            keyboardType: TextInputType.text,
+            onChanged: (value) {
+              nfNombre2 = value;
+            },
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+                color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Nombre',
+
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            initialValue: nfPuesto,
+            keyboardType: TextInputType.text,
+            onChanged: (value) {
+              nfPuesto = value;
+            },
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+                color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Puesto',
+            ),
+          ),
+          SizedBox( height: 10.0 ),
+          TextFormField(
+            initialValue: nfRelacion,
+            keyboardType: TextInputType.text,
+            onChanged: (value) {
+              nfRelacion = value;
+            },
+            cursorColor: Color(0xffA4A4A4),
+            style: TextStyle(
+                color: Colors.black
+            ),
+            decoration: InputDecorations.loginInputDecoration(
+              hintText: 'Relacion',
+            ),
+          ),
+
+        ],
+      ),
+    );
+    print("llega");
+    print(nfNombre2);
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xff565D82),
@@ -20,8 +82,8 @@ class nuevaFamilia extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-              datos,
-              tipo,
+                datos,
+                tipo,
                 frecuen,
                 retribucion,
                 Padding(
@@ -40,10 +102,35 @@ class nuevaFamilia extends StatelessWidget {
                     ),   padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20)),
                     backgroundColor: MaterialStateProperty.all<Color>(Color(0xff4D5BA6))
                 ),
-                    onPressed: () {
-                      Navigator.pushNamed(context,"antecedentes");
+                    onPressed: () async{
+                      Navigator.pushNamed(context, 'familia_empresa');
+                      DocumentReference documentReferencer =
+                      //_mainCollection.doc(userUid).collection('items').doc();
+                      FirebaseFirestore.instance.collection('familia').doc();
+                      Map<String, dynamic> data = <String, dynamic>{
+
+                        "bandera": aeNombre,
+                        "NF01" : nfTipo ,
+                        "NF02" : nfFrecuencia ,
+                        "NF03" :nfTipo2 ,
+                        "NF04": nfNombre2 ,
+                        "NF05": nfPuesto ,
+                        "NF06": nfRelacion,
+
+                      };
+
+
+                      await documentReferencer
+                          .set(data)
+                          .whenComplete(() => print("Notes item added to the database"))
+                          .catchError((e) => print(e));
+                      reiniciar();
+
+
+
                     },
-                    child:  RichText(
+
+                      child:  RichText(
                       text: TextSpan(
                         children: [
 
@@ -53,6 +140,7 @@ class nuevaFamilia extends StatelessWidget {
                             child: Icon(Icons.save, size: 14),
                           ),
                         ],
+
                       ),
                     )
 
@@ -61,8 +149,8 @@ class nuevaFamilia extends StatelessWidget {
       ),
     );
   }
-}
 
+}
 enum tipoApoyo { Moral, Operacional, Supervicion, Gerencia, Direccion}
 enum frecuencia { Esporadica, FrecuenteCompromiso, Compromisoimplicito, Compromisoexplicito}
 enum retribu { Afectiva, Economicasimbolica, Economicareal, Patrimonial}
@@ -90,6 +178,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onChanged: (tipoApoyo? value) {
               setState(() {
                 _character = value;
+                nfTipo = 'Moral';
               });
             },
           ),
@@ -102,6 +191,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onChanged: (tipoApoyo? value) {
               setState(() {
                 _character = value;
+                nfTipo = 'Operacional';
               });
             },
           ),
@@ -114,6 +204,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onChanged: (tipoApoyo? value) {
               setState(() {
                 _character = value;
+                nfTipo = 'Supervicion';
+
               });
             },
           ),
@@ -126,6 +218,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onChanged: (tipoApoyo? value) {
               setState(() {
                 _character = value;
+                nfTipo = 'Gerencia';
               });
             },
           ),
@@ -138,6 +231,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onChanged: (tipoApoyo? value) {
               setState(() {
                 _character = value;
+                nfTipo = 'Direccion';
               });
             },
           ),
@@ -167,6 +261,7 @@ class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
             onChanged: (frecuencia? value) {
               setState(() {
                 _character2 = value;
+                nfFrecuencia = 'Esporadica';
               });
             },
           ),
@@ -179,6 +274,7 @@ class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
             onChanged: (frecuencia? value) {
               setState(() {
                 _character2 = value;
+                nfFrecuencia = 'Frecuente Compromiso';
               });
             },
           ),
@@ -191,6 +287,7 @@ class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
             onChanged: (frecuencia? value) {
               setState(() {
                 _character2 = value;
+                nfFrecuencia = 'Compromiso explicito';
               });
             },
           ),
@@ -203,6 +300,7 @@ class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
             onChanged: (frecuencia? value) {
               setState(() {
                 _character2 = value;
+                nfFrecuencia = 'Compromiso implicito';
               });
             },
           ),
@@ -218,6 +316,7 @@ class MyStatefulWidget3 extends StatefulWidget {
   @override
   State<MyStatefulWidget3> createState() => _MyStatefulWidgetState3();
 }
+
 class _MyStatefulWidgetState3 extends State<MyStatefulWidget3> {
   retribu? _character3 = retribu.Afectiva;
 
@@ -233,6 +332,7 @@ class _MyStatefulWidgetState3 extends State<MyStatefulWidget3> {
             onChanged: (retribu? value) {
               setState(() {
                 _character3 = value;
+                nfTipo2 = 'Afectiva';
               });
             },
           ),
@@ -245,6 +345,7 @@ class _MyStatefulWidgetState3 extends State<MyStatefulWidget3> {
             onChanged: (retribu? value) {
               setState(() {
                 _character3 = value;
+                nfTipo2 = 'Economica Real';
               });
             },
           ),
@@ -257,6 +358,7 @@ class _MyStatefulWidgetState3 extends State<MyStatefulWidget3> {
             onChanged: (retribu? value) {
               setState(() {
                 _character3 = value;
+                nfTipo2 = 'Economica Simbolica';
               });
             },
           ),
@@ -269,6 +371,7 @@ class _MyStatefulWidgetState3 extends State<MyStatefulWidget3> {
             onChanged: (retribu? value) {
               setState(() {
                 _character3 = value;
+                nfTipo2 = 'Patrimonial';
               });
             },
           ),
@@ -281,48 +384,7 @@ class _MyStatefulWidgetState3 extends State<MyStatefulWidget3> {
 
 
 
-var datos = Container(
-  padding: EdgeInsets.all(15.0),
-  child: Column(
-    children: [
-      Titulo(titulo: 'Datos Familiar'),
-      SizedBox( height: 10.0 ),
-      TextFormField(
-        keyboardType: TextInputType.text,
-        cursorColor: Color(0xffA4A4A4),
-        style: TextStyle(
-            color: Colors.black
-        ),
-        decoration: InputDecorations.loginInputDecoration(
-          hintText: 'Nombre',
-        ),
-      ),
-      SizedBox( height: 10.0 ),
-      TextFormField(
-        keyboardType: TextInputType.text,
-        cursorColor: Color(0xffA4A4A4),
-        style: TextStyle(
-            color: Colors.black
-        ),
-        decoration: InputDecorations.loginInputDecoration(
-          hintText: 'Puesto',
-        ),
-      ),
-      SizedBox( height: 10.0 ),
-      TextFormField(
-        keyboardType: TextInputType.text,
-        cursorColor: Color(0xffA4A4A4),
-        style: TextStyle(
-            color: Colors.black
-        ),
-        decoration: InputDecorations.loginInputDecoration(
-          hintText: 'Relacion',
-        ),
-      ),
 
-    ],
-  ),
-);
 
 var tipo = Container(
     padding: EdgeInsets.all(15.0),
@@ -354,7 +416,7 @@ var retribucion = Container(
     padding: EdgeInsets.all(15.0),
     child: Column(
         children: [
-          Titulo(titulo: 'Frecuencia de Apoyo'),
+          Titulo(titulo: 'Tipo de Retribución'),
           SizedBox( height: 10.0 ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -363,3 +425,11 @@ var retribucion = Container(
             ],
           )
         ]));
+reiniciar(){
+  nfTipo=         "";
+  nfFrecuencia=   "";
+  nfTipo2=        "";
+  nfNombre2 =     "";
+  nfPuesto =      "";
+  nfRelacion=     "";
+}

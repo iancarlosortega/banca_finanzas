@@ -1,5 +1,6 @@
 import 'package:banca_finanzas/src/providers/login_form_provider.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

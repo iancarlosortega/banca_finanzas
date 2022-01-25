@@ -1,3 +1,4 @@
+import 'package:banca_finanzas/main.dart';
 import 'package:banca_finanzas/src/widgets/input_decoration.dart';
 import 'package:banca_finanzas/src/widgets/number_stars.dart';
 import 'package:flutter/material.dart';
@@ -1194,6 +1195,7 @@ class _SubsistemaMercadoSreenState extends State<SubsistemaMercadoSreen> {
                                     reportes7 = rating;
                                     totalReportes = reportes1 + reportes2 + reportes3 + reportes4 + reportes5 + reportes6 + reportes7;
                                     total = totalProductos + totalSegmentos + totalClientes + totalExpectativas + totalComercializacion + totalReportes;
+                                    totalsm =total;
                                   });
                                 },
                                 itemCount: 5,
@@ -1266,6 +1268,8 @@ class _Botones extends StatelessWidget {
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
             onPressed: () {
+              print("totalsm");
+              print(totalsm);
               Navigator.pushNamed(context, 'subsistema_produccion');
             },  
             icon: Icon(Icons.arrow_forward)

@@ -10,6 +10,7 @@ import 'package:banca_finanzas/src/screens/subsistema_produccion.dart';
 import 'package:banca_finanzas/src/screens/subsistema_personal.dart';
 import 'package:banca_finanzas/src/screens/subsistema_legal.dart';
 import 'package:banca_finanzas/src/screens/plan_mejora.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 //Pantallas

@@ -3,74 +3,37 @@ import 'package:banca_finanzas/src/widgets/number_stars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-double total = 0.0; 
-double totalMateriales = 0.0; 
-double totalUbicacion = 0.0; 
-double totalLugar = 0.0; 
-double totalProcedimiento = 0.0; 
-double totalMaquinaria = 0.0; 
-double totalCalidad = 0.0; 
-double totalReportes = 0.0; 
-double materiales1 = 0.0; 
-double materiales2 = 0.0; 
-double materiales3 = 0.0; 
-double materiales4 = 0.0; 
-double materiales5 = 0.0; 
-double materiales6 = 0.0; 
-double materiales7 = 0.0; 
-double materiales8 = 0.0; 
-double ubicacion1 = 0.0; 
-double ubicacion2 = 0.0; 
-double ubicacion3 = 0.0; 
-double ubicacion4 = 0.0; 
-double ubicacion5 = 0.0; 
-double lugar1 = 0.0; 
-double lugar2 = 0.0; 
-double lugar3 = 0.0; 
-double lugar4 = 0.0; 
-double lugar5 = 0.0; 
-double lugar6 = 0.0; 
-double lugar7 = 0.0; 
-double lugar8 = 0.0; 
-double lugar9 = 0.0; 
-double lugar10 = 0.0; 
-double lugar11 = 0.0; 
-double lugar12 = 0.0; 
-double lugar13 = 0.0; 
-double lugar14 = 0.0; 
-double procedimiento1 = 0.0; 
-double procedimiento2 = 0.0; 
-double procedimiento3 = 0.0; 
-double procedimiento4 = 0.0; 
-double procedimiento5 = 0.0; 
-double procedimiento6 = 0.0; 
-double procedimiento7 = 0.0; 
-double procedimiento8 = 0.0; 
-double procedimiento9 = 0.0; 
-double procedimiento10 = 0.0; 
-double procedimiento11 = 0.0; 
-double procedimiento12 = 0.0;
-double maquinaria1 = 0.0; 
-double maquinaria2 = 0.0; 
-double maquinaria3 = 0.0; 
-double calidad1 = 0.0; 
-double calidad2 = 0.0; 
-double calidad3 = 0.0; 
-double reportes1 = 0.0;
-double reportes2 = 0.0;
-double reportes3 = 0.0;
-double reportes4 = 0.0;
-double reportes5 = 0.0;
+import '../../main.dart';
 
+double total = 0.0;
+double totalMateriales = 0.0;
+double totalUbicacion = 0.0;
+double totalLugar = 0.0;
+double totalProcedimiento = 0.0;
+double totalMaquinaria = 0.0;
+double totalCalidad = 0.0;
+double totalReportes = 0.0;
+reiniciar(){
+   total = 0.0;
+   totalMateriales = 0.0;
+   totalUbicacion = 0.0;
+   totalLugar = 0.0;
+   totalProcedimiento = 0.0;
+   totalMaquinaria = 0.0;
+   totalCalidad = 0.0;
+   totalReportes = 0.0;
+}
 class SubsistemProduccionSreen extends StatefulWidget {
   const SubsistemProduccionSreen({Key? key}) : super(key: key);
 
   @override
+
   _SubsistemProduccionSreenState createState() => _SubsistemProduccionSreenState();
 }
 
 class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
   @override
+
   Widget build(BuildContext context) {
 
     return Scaffold(
@@ -107,6 +70,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Compras'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales1,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -132,7 +96,8 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Inventarios'),
                               Expanded(child: Container()),
                               RatingBar.builder(
-                                itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
+                                initialRating: materiales2,
+                                itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
                                     materiales2 = rating;
@@ -165,6 +130,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Atributos físicos'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales3,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -190,6 +156,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Estandarización'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales4,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -215,6 +182,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Trabajabilidad'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales5,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -240,6 +208,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Disponibilidad'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales6,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -265,6 +234,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Tiempo de entregas'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales7,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -290,6 +260,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Precio'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: materiales8,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -328,6 +299,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Materia prima'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: ubicacion1,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -353,6 +325,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Mano de obra'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: ubicacion2,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -378,6 +351,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Clientes'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: ubicacion3,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -403,6 +377,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Medio ambiente'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: ubicacion4,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -428,6 +403,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Económico'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: ubicacion5,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -466,6 +442,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Edificio'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar1,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -491,6 +468,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Espacion'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar2,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -524,6 +502,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Temperatura'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar3,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -549,6 +528,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Luz'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar4,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -574,6 +554,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Ruido'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar5,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -599,6 +580,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Colores'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar6,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -624,6 +606,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Ventilación'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar7,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -649,6 +632,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Instalaciones sanitarias'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar8,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -674,6 +658,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Lockers'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar9,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -699,6 +684,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Alimentos'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar10,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -732,6 +718,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Por puesto'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar11,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -757,6 +744,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Por taller'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar12,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -782,6 +770,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Por linea'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: lugar13,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -820,6 +809,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Adecuado'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: maquinaria1,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -845,6 +835,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Suficiente'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: maquinaria2,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -870,6 +861,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Mantenimiento'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: maquinaria3,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -908,6 +900,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('¿Es estándar?'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: calidad1,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -933,6 +926,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('¿Se hacen mejoras a procesos?'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: calidad2,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -958,6 +952,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('¿Se actualiza la tecnología?'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: calidad3,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -998,6 +993,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Calidad de los materiales'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: reportes1,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -1023,6 +1019,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Costo de los materiales'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: reportes2,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -1048,6 +1045,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Inventarios de los materiales'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: reportes3,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -1073,6 +1071,7 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Desperdicios'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: reportes4,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
@@ -1098,12 +1097,14 @@ class _SubsistemProduccionSreenState extends State<SubsistemProduccionSreen> {
                               Text('Rechazos de los productos'),
                               Expanded(child: Container()),
                               RatingBar.builder(
+                                initialRating: reportes5,
                                 itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,), 
                                 onRatingUpdate: ( rating ) {
                                   setState(() {
                                     reportes5 = rating;
                                     totalReportes = reportes1 + reportes2 + reportes3 + reportes4 + reportes5;
                                     total = totalMateriales + totalUbicacion + totalLugar + totalProcedimiento + totalMaquinaria + totalCalidad + totalReportes;
+                                    totalsp = total;
                                   });
                                 },
                                 itemCount: 5,
@@ -1145,7 +1146,9 @@ class _Comentarios extends StatelessWidget {
             children: [
               SizedBox( height: 10.0 ),
               TextFormField(
+                initialValue: spComentarios,
                 maxLines: null,
+
                 keyboardType: TextInputType.multiline,
                 cursorColor: Color(0xffA4A4A4),
                 style: TextStyle(
@@ -1185,6 +1188,7 @@ class _Botones extends StatelessWidget {
           backgroundColor: Color(0xff4D5BA6),
           child: IconButton(
             onPressed: () {
+              reiniciar();
               Navigator.pushNamed(context, 'subsistema_personal');
             },  
             icon: Icon(Icons.arrow_forward)

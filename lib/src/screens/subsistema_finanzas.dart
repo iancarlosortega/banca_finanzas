@@ -4,10 +4,51 @@ import 'package:banca_finanzas/src/widgets/titulo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class SubsistemaFinanzasSreen extends StatelessWidget {
-  const SubsistemaFinanzasSreen({Key? key}) : super(key: key);
-  
 
+double total = 0.0; 
+double totalCosteo = 0.0; 
+double totalFinanciera = 0.0; 
+double totalFinanzas = 0.0; 
+double totalAdministracion = 0.0;
+double totalProcedimientos = 0.0;
+double totalSeguros = 0.0;
+double totalReportes = 0.0;
+double costeo1 = 0.0; 
+double costeo2 = 0.0; 
+double financiera1 = 0.0; 
+double financiera2 = 0.0; 
+double financiera3 = 0.0; 
+double financiera4 = 0.0; 
+double financiera5 = 0.0; 
+double administracion1 = 0.0; 
+double administracion2 = 0.0; 
+double administracion3 = 0.0; 
+double administracion4 = 0.0;
+double administracion5 = 0.0; 
+double administracion6 = 0.0; 
+double administracion7 = 0.0; 
+double administracion8 = 0.0; 
+double seguros1 = 0.0; 
+double seguros2 = 0.0; 
+double seguros3 = 0.0; 
+double seguros4 = 0.0; 
+double seguros5 = 0.0; 
+double finanzas1 = 0.0;
+double finanzas2 = 0.0;
+double finanzas3 = 0.0;
+double reportes1 = 0.0;
+double reportes2 = 0.0;
+double reportes3 = 0.0;
+double reportes4 = 0.0;
+double reportes5 = 0.0;
+class SubsistemaFinanzasSreen extends StatefulWidget {
+  const SubsistemaFinanzasSreen({Key? key}) : super(key: key);
+
+  @override
+  _SubsistemaFinanzasSreenState createState() => _SubsistemaFinanzasSreenState();
+}
+
+class _SubsistemaFinanzasSreenState extends State<SubsistemaFinanzasSreen> {
   @override
   Widget build(BuildContext context) {
 
@@ -23,7 +64,7 @@ class SubsistemaFinanzasSreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
 
-              NumberStars( text: 'Finanzas: 90'),
+              NumberStars( text: 'Finanzas: $total/90'),
               SizedBox(height: 10),
               _historia(),
               SizedBox(height: 10),
@@ -816,106 +857,6 @@ class reportes extends StatelessWidget {
                   SizedBox(height: 10),
                 ])), Text('Forma', textAlign: TextAlign.left),
 
-        Container(
-          child: Column(
-            children: [
-              SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Lírico'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Manual'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Computarizado'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Personal'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Color(0xff96C4F4)
-                ),
-                child: Row(
-                  children: [
-                    Text('Organizacional'),
-                    Expanded(child: Container()),
-                    RatingBar.builder(
-                      itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber,),
-                      onRatingUpdate: (rating) {},
-                      itemSize: 25,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
 class _Comentarios extends StatelessWidget {
   const _Comentarios({Key? key}) : super(key: key);
 

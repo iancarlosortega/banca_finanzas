@@ -37,6 +37,7 @@ class FamiliaEmpresaSreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff565D82),
         title: Text('Familia en la empresa'),
+
       ),
       body: SingleChildScrollView(
           child: Column(

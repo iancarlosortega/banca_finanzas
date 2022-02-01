@@ -112,7 +112,7 @@ var nfRelacion ;
 var nfTipo= "moral";
 var nfFrecuencia= 'Compromiso explicito';
 var nfTipo2 = 'Afectiva';
-
+var bandera = true;
 double totalsp = 0.0;
 double totalspe = 0.0;
 double totalsm = 0.0;

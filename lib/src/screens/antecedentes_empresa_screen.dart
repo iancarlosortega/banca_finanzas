@@ -17,7 +17,7 @@ action(BuildContext context) {
             .where('AE01', isEqualTo: aeNombre)
             .get().then((value){
           value.docs.forEach((element) {
-            FirebaseFirestore.instance.collection("eventDetails").doc(element.id).delete().then((value){
+            FirebaseFirestore.instance.collection("antecedentesEmpresa").doc(element.id).delete().then((value){
               print("Success!");
               Navigator.pushNamed(context, 'home');
             });

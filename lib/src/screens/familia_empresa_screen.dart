@@ -145,6 +145,7 @@ class FamiliaEmpresaSreen extends StatelessWidget {
            print(nfNombre2);
            nfPuesto =lista["NF05"];
            nfRelacion=lista["NF06"];
+           bandera2= false;
          Navigator.pushNamed(context, 'nuevaFamilia');
          },
          child:
@@ -214,4 +215,5 @@ reiniciar(){
   nfNombre2 =     "";
   nfPuesto =      "";
   nfRelacion=     "";
+  bandera2 = true;
 }

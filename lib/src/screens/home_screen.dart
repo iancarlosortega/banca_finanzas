@@ -15,13 +15,16 @@ Future<List<dynamic>> getData() async {
 
   // Get data from docs and convert map to List
   allData = querySnapshot.docs.map((doc) => doc.data()).toList();
-  /*var x;
+
+
+  var x;
     for(x in allData){
       print("data");
-      print(x);
+      print("id");
+     // print(x.id);
     }
-    print("data");
-    print(allData);*/
+    //print("data");
+    //print(allData);
   return allData;
 }
 class HomeScreen extends StatelessWidget {
@@ -280,6 +283,7 @@ reiniciar(){
   agAno=              "";
   agComentarios6=     "";
   agejecutivo=        "";
+  bandera = true;
   materiales1 = 0.0;
   materiales2 = 0.0;
   materiales3 = 0.0;
@@ -488,11 +492,12 @@ card(String nombre,String fecha,String resultado, Map lista ,BuildContext contex
         reportes3           = lista["spreportes3"];
         reportes4           = lista["spreportes4"];
         reportes5           = lista["spreportes5"];
-        totalsp = lista["totalsp"];
-        totalspe = lista["totalspe"];
-        totalsm = lista["totalsm"];
-        totalsl = lista["totalsl"];
-        totalsf = lista["totalsf"];
+        totalsp = lista["totalsp"].toDouble();
+        totalspe = lista["totalspe"].toDouble();
+        totalsm = lista["totalsm"].toDouble();
+        totalsl = lista["totalsl"].toDouble();
+        totalsf = lista["totalsf"].toDouble();
+        bandera = false;
         Navigator.pushNamed(context, 'antecedentes_empresa');
       },
       child:

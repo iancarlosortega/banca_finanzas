@@ -7,7 +7,30 @@ import '../../main.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final CollectionReference _mainCollection = _firestore.collection('notes');
-
+action(BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.only(right: 20.0),
+    child: GestureDetector(
+      onTap: () {
+        FirebaseFirestore.instance
+            .collection("antecedentesEmpresa")
+            .where('AE01', isEqualTo: aeNombre)
+            .get().then((value){
+          value.docs.forEach((element) {
+            FirebaseFirestore.instance.collection("antecedentesEmpresa").doc(element.id).delete().then((value){
+              print("Success!");
+              Navigator.pushNamed(context, 'home');
+            });
+          });
+        });
+      },
+      child: Icon(
+        Icons.delete,
+        size: 26.0,
+      ),
+    )
+);
+}
 read(){
   CollectionReference notesItemCollection = FirebaseFirestore.instance.collection('antecedentesEmpresa');
   Future<void> getData() async {
@@ -34,6 +57,9 @@ class AntecedentesEmpresaScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff565D82),
         title: Text('Antecedentes de la Empresa'),
+        actions: <Widget>[
+          if(bandera == false) action(context)
+        ],
       ),
       body: SingleChildScrollView( 
         child: Column(

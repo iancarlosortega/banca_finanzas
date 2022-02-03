@@ -775,17 +775,10 @@ class _Botones extends StatelessWidget {
           child: IconButton(
             onPressed: () async {
               var date = new DateTime.now().toString();
-              var tot = ((totalsf +totalsl+totalsm+ totalspe+totalsp)/400)*100;
-              print("calculos");
 
-              print (tot);
-              print (totalsf );
-              print ( totalsl);
-              print ( totalsm);
-              print ( totalspe);
-              print ( totalsp);
-              print("fin calculos");
-              Navigator.pushNamed(context, 'home');
+
+
+
               DocumentReference documentReferencer =
               //_mainCollection.doc(userUid).collection('items').doc();
                   FirebaseFirestore.instance.collection('antecedentesEmpresa').doc();
@@ -945,16 +938,31 @@ class _Botones extends StatelessWidget {
                 "date" : date ,
                 "media" : ((totalsf +totalsl+totalsm+ totalspe+totalsp)/400)*100,
               };
-
+              print("bandera");
+              print(bandera);
+              if(bandera == true){
               await documentReferencer
                   .set(data)
-                  .whenComplete(() => print("Notes item added to the database"))
+                  .whenComplete(() => Navigator.pushNamed(context, 'home'))
                   .catchError((e) => print(e));
-            },  
+
+            }else{
+                QuerySnapshot querySnap = await FirebaseFirestore.instance.collection('antecedentesEmpresa').where('AE01', isEqualTo: aeNombre).get();
+                QueryDocumentSnapshot doc = querySnap.docs[0];  // Assumption: the query returns only one document, THE doc you are looking for.
+                DocumentReference docRef = doc.reference;
+                await docRef.update(data)
+                    .whenComplete(() => Navigator.pushNamed(context, 'home') )
+                    .catchError((e) => print(e));
+              }
+
+              },
             icon: Icon(Icons.check)
           ),
         ),
       ],
     );
   }
+}
+update() async {
+
 }

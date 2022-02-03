@@ -8,7 +8,30 @@ import 'package:flutter/rendering.dart';
 
 import '../../main.dart';
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
+action(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.only(right: 20.0),
+      child: GestureDetector(
+        onTap: () {
+          FirebaseFirestore.instance
+              .collection("familia")
+              .where('NF04', isEqualTo: nfNombre2)
+              .get().then((value){
+            value.docs.forEach((element) {
+              FirebaseFirestore.instance.collection("familia").doc(element.id).delete().then((value){
+                print("Success!");
+                Navigator.pushNamed(context, 'familia_empresa');
+              });
+            });
+          });
+        },
+        child: Icon(
+          Icons.delete,
+          size: 26.0,
+        ),
+      )
+  );
+}
 class nuevaFamilia extends StatelessWidget {
   const nuevaFamilia({Key? key}) : super(key: key);
 
@@ -77,6 +100,9 @@ class nuevaFamilia extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Color(0xff565D82),
           title: Text('Nuevo familiar en la empresa'),
+          actions: <Widget>[
+            if(bandera2 == false) action(context)
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -119,12 +145,21 @@ class nuevaFamilia extends StatelessWidget {
 
                       };
 
-
-                      await documentReferencer
-                          .set(data)
-                          .whenComplete(() => print("Notes item added to the database"))
-                          .catchError((e) => print(e));
-                      reiniciar();
+                      if(bandera2 == true) {
+                        await documentReferencer
+                            .set(data)
+                            .whenComplete(() =>
+                            print("Notes item added to the database"))
+                            .catchError((e) => print(e));
+                        reiniciar();
+                      }else{
+                        QuerySnapshot querySnap = await FirebaseFirestore.instance.collection('familia').where('NF04', isEqualTo: nfNombre2).get();
+                        QueryDocumentSnapshot doc = querySnap.docs[0];  // Assumption: the query returns only one document, THE doc you are looking for.
+                        DocumentReference docRef = doc.reference;
+                        await docRef.update(data)
+                            .whenComplete(() => Navigator.pushNamed(context, 'familia_empresa') )
+                            .catchError((e) => print(e));
+                      }
 
 
 

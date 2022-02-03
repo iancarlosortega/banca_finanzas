@@ -37,151 +37,152 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff565D82),
       body:
-          SingleChildScrollView(child:
-      Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height*0.3,
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width*0.07,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                      "GODARES",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w800,
-                        fontFamily: 'Roboto',
-                        letterSpacing: 0.5,
-                        fontSize: 20,
-                        )
-                      ),
-                      SizedBox(height: 25),
-                      CircleAvatar(
-                        minRadius: 50,
-                        backgroundColor: Color(0xffC4C4C4),
-                      ),
-                       SizedBox(height: 25),
-                      Text(
-                      "¡Bienvenido User!",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w800,
-                        fontFamily: 'Roboto',
-                        letterSpacing: 0.5,
-                        fontSize: 20,
-                        )
-                      ),
-
-                    ],
-                  ),
-                  Column(
+        SafeArea(
+          child: SingleChildScrollView(child:
+            Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height*0.3,
+                  child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-
-                        IconButton(
-                          icon: Icon(
-                              Icons.logout,
-                              color: Colors.white,
-                              size: 35,
-
-                          ), onPressed: () {
-                            Navigator.pushNamed(context, 'login');
-                            },
-                        ),
+                      children: <Widget>[
                         Container(
-                          height: MediaQuery.of(context).size.height*0.2,
+                          width: MediaQuery.of(context).size.width*0.07,
                         ),
-                    ],
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                            "GODARES",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontFamily: 'Roboto',
+                              letterSpacing: 0.5,
+                              fontSize: 20,
+                              )
+                            ),
+                            SizedBox(height: 25),
+                            CircleAvatar(
+                              minRadius: 50,
+                              backgroundColor: Color(0xffC4C4C4),
+                              backgroundImage: NetworkImage('https://www.isesinstituto.com/sites/default/files/istock-1158245282.jpg'),
+                            ),
+                            SizedBox(height: 25),
+                            Text(
+                            "¡Bienvenido Ian!",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontFamily: 'Roboto',
+                              letterSpacing: 0.5,
+                              fontSize: 20,
+                              )
+                            ),
+        
+                          ],
+                        ),
+                        Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+        
+                              IconButton(
+                                icon: Icon(
+                                    Icons.logout,
+                                    color: Colors.white,
+                                    size: 35,
+        
+                                ), onPressed: () {
+                                  Navigator.pushNamed(context, 'login');
+                                  },
+                              ),
+                              Container(
+                                height: MediaQuery.of(context).size.height*0.2,
+                              ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
-            ),
-          SingleChildScrollView(
-            child: Container(
-
-              //height: MediaQuery.of(context).size.height*0.605,
-              //width: MediaQuery.of(context).size.width*1,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: const Radius.circular(50.0),
-                  topRight: const Radius.circular(50.0),
-                  ),
-                color: Color(0xffF0F0F0),
-              ),
-              child:
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(height: 20),
-                  const Text(
-                    "Listado de empresas encuestadas",
-                    style: TextStyle(
-                      color: Color(0xff565D82),
-                      fontWeight: FontWeight.w800,
-                      fontFamily: 'Roboto',
-                      letterSpacing: 0.5,
-                      fontSize: 20,
-                    )
-                  ),
-                  Padding(padding: EdgeInsets.all(16.0),
-                  child: Column(mainAxisAlignment: MainAxisAlignment.start,
-                      children:[//for ( var i in allData ) card(i["AE01"],i["AE02"],i["AE03"])]
-                        SingleChildScrollView( child:
-                        FutureBuilder<List>(
-                          future: getData(),
-                          builder: (
-                              BuildContext context,
-                              AsyncSnapshot<List> snapshot,
-
-                              ) {
-                            print(snapshot.connectionState);
-                            if (snapshot.connectionState == ConnectionState.waiting) {
-                              return CircularProgressIndicator();
-                            } else if (snapshot.connectionState == ConnectionState.done) {
-                              if (snapshot.hasError) {
-                                return const Text('Error');
-                              } else if (snapshot.hasData) {
-
-                                return Column(mainAxisAlignment: MainAxisAlignment.start,
-                                children:[for ( var i in allData ) card(i["AE01"],i["date"],i["media"].toString(), i,context)]);
-                              } else {
-                                return const Text('Empty data');
-                              }
-                            } else {
-                              return Text('State: ${snapshot.connectionState}');
-                            }
-                          },
+                SingleChildScrollView(
+                  child: Container(
+                    height: 400,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: const Radius.circular(50.0),
+                        topRight: const Radius.circular(50.0),
+                        ),
+                      color: Color(0xffF0F0F0),
+                    ),
+                    child:
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20),
+                        const Text(
+                          "Listado de empresas encuestadas",
+                          style: TextStyle(
+                            color: Color(0xff565D82),
+                            fontWeight: FontWeight.w800,
+                            fontFamily: 'Roboto',
+                            letterSpacing: 0.5,
+                            fontSize: 20,
+                          )
+                        ),
+                        Padding(padding: EdgeInsets.all(16.0),
+                        child: Column(mainAxisAlignment: MainAxisAlignment.start,
+                            children:[//for ( var i in allData ) card(i["AE01"],i["AE02"],i["AE03"])]
+                              SingleChildScrollView( child:
+                              FutureBuilder<List>(
+                                future: getData(),
+                                builder: (
+                                    BuildContext context,
+                                    AsyncSnapshot<List> snapshot,
+        
+                                    ) {
+                                  print(snapshot.connectionState);
+                                  if (snapshot.connectionState == ConnectionState.waiting) {
+                                    return CircularProgressIndicator();
+                                  } else if (snapshot.connectionState == ConnectionState.done) {
+                                    if (snapshot.hasError) {
+                                      return const Text('Error');
+                                    } else if (snapshot.hasData) {
+        
+                                      return Column(mainAxisAlignment: MainAxisAlignment.start,
+                                      children:[for ( var i in allData ) card(i["AE01"],i["date"],i["media"].toString(), i,context)]);
+                                    } else {
+                                      return const Text('Empty data');
+                                    }
+                                  } else {
+                                    return Text('State: ${snapshot.connectionState}');
+                                  }
+                                },
+                              )
+                              )
+                            ]
                         )
-                        )
-                      ]
-                  )
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
-          ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Visibility(
-        visible: !keyboardIsOpen,
-        child: FloatingActionButton(
-          backgroundColor: Color(0xff565D82),
-          onPressed: (){
-            reiniciar();
-             Navigator.pushNamed(context, 'antecedentes_empresa');
-          },
-          child: Icon(Icons.add),
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: Visibility(
+          visible: !keyboardIsOpen,
+          child: FloatingActionButton(
+            backgroundColor: Color(0xff565D82),
+            onPressed: (){
+              reiniciar();
+              Navigator.pushNamed(context, 'antecedentes_empresa');
+            },
+            child: Icon(Icons.add),
+          ),
+        ),
+        bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

@@ -46,7 +46,7 @@ class _SplashSreenState extends State<SplashSreen> {
             borderRadius: BorderRadius.circular(25.0), 
           ),
           child: FadeInImage(
-            placeholder: AssetImage('assets/jar-loading.gif'), 
+            placeholder: AssetImage('assets/loading-spinner.gif'), 
             image: AssetImage('assets/logoHD.png')
           )
         ),
